@@ -1,0 +1,181 @@
+{
+  "job_id": 54181,
+  "slurm_state": "COMPLETED",
+  "slurm_exit_code": "0:0",
+  "slurm_elapsed_last_cycle": "00:13:01",
+  "elapsed_is_total": false,
+  "epochs_completed": 20,
+  "best_epoch_zero_based": 9,
+  "best_epoch_one_based": 10,
+  "global": {
+    "n": 870816,
+    "rmse": 0.10566611512631793,
+    "mae": 0.022268063463806734,
+    "bias": 0.000721519794260755,
+    "nse": 0.6208033608446817,
+    "kge2009": 0.7188083986964771,
+    "r": 0.7883767781360117,
+    "alpha": 0.8151518255643099,
+    "beta": 1.0107462095334716,
+    "negative_prediction_fraction": 0.010839258810127513
+  },
+  "validation_windows": 18142,
+  "negative_prediction_count_inferred": 9439,
+  "training_and_validation_seconds_sum": 14189.756565185497,
+  "epoch_seconds_median": 527.0457018715097,
+  "epoch_seconds_min": 468.7692171339877,
+  "epoch_seconds_max": 3372.9122534960043,
+  "max_peak_cuda_mib": 746.85400390625,
+  "dmel_rmse_relative_increase_vs_lstm_pct": 3.3075399347525236,
+  "dmel_mae_relative_increase_vs_lstm_pct": 4.665649066247335,
+  "negative_fraction_change_percentage_points": -2.171641311138059,
+  "comparison": [
+    {
+      "metric": "rmse",
+      "lstm": 0.10228306200404642,
+      "dmel": 0.10566611512631793,
+      "dmel_minus_lstm": 0.0033830531222715093
+    },
+    {
+      "metric": "mae",
+      "lstm": 0.02127542671589638,
+      "dmel": 0.022268063463806734,
+      "dmel_minus_lstm": 0.0009926367479103533
+    },
+    {
+      "metric": "bias",
+      "lstm": -0.0002784329054231207,
+      "dmel": 0.000721519794260755,
+      "dmel_minus_lstm": 0.0009999526996838756
+    },
+    {
+      "metric": "nse",
+      "lstm": 0.6446957192955849,
+      "dmel": 0.6208033608446817,
+      "dmel_minus_lstm": -0.023892358450903206
+    },
+    {
+      "metric": "kge2009",
+      "lstm": 0.7220572584345443,
+      "dmel": 0.7188083986964771,
+      "dmel_minus_lstm": -0.0032488597380672113
+    },
+    {
+      "metric": "r",
+      "lstm": 0.802931869424923,
+      "dmel": 0.7883767781360117,
+      "dmel_minus_lstm": -0.014555091288911304
+    },
+    {
+      "metric": "alpha",
+      "lstm": 0.8040430598316141,
+      "dmel": 0.8151518255643099,
+      "dmel_minus_lstm": 0.011108765732695813
+    },
+    {
+      "metric": "beta",
+      "lstm": 0.9958530613207146,
+      "dmel": 1.0107462095334716,
+      "dmel_minus_lstm": 0.014893148212757001
+    },
+    {
+      "metric": "negative_prediction_fraction",
+      "lstm": 0.0325556719215081,
+      "dmel": 0.010839258810127513,
+      "dmel_minus_lstm": -0.02171641311138059
+    }
+  ],
+  "validation_scope": "Validación usada para seleccionar checkpoint. Una corrida por modelo. No son resultados de test ni una prueba de significación estadística.",
+  "interpretation": {
+    "global": "LSTM tiene menor RMSE y MAE, y mayor NSE y KGE. DMEL reduce la fracción de predicciones negativas. Comparación de una semilla en validación usada para seleccionar los checkpoints.",
+    "macro": "Las medias macro negativas coexisten con medianas positivas. No omitir cuencas con baja variabilidad ni sus fallos.",
+    "comparability": "Coinciden los 48 horizontes, 508 IDs de cuenca, tamaños por grupo y n global. No se han cotejado predicciones individuales localmente."
+  },
+  "remote_checksums_from_log": {
+    "runs/dmel-seed42/best.pt": "b384943057e1434bd15c2a7aeb8018b165375b99f6eb03b82a4ab826cbe60569",
+    "runs/dmel-seed42/config.json": "1c72aa7a0f8cdb62f56e33f3355b00b41e585bda5c0b2bf91e6e0998311a13e3"
+  },
+  "checkpoints_downloaded": false,
+  "raw_predictions_available_locally": false,
+  "per_horizon_and_basin_metrics_available": true,
+  "consistency_checks": [
+    "20 épocas consecutivas y 20 ciclos de training_start",
+    "Mínimo del historial idéntico al RMSE final y paciencia coherente",
+    "254000 train y 18142 validation constantes",
+    "Fuente SHA-256 idéntica a LSTM",
+    "NSE y RMSE de ambos modelos implican la misma varianza observada global",
+    "Fracción negativa consistente con un conteo entero",
+    "48 horizontes y 508 cuencas con los mismos IDs y n por grupo que LSTM",
+    "Agregados ponderados de RMSE, MAE, bias y fracción negativa coinciden con el global",
+    "Varianza observada inferida coincide entre modelos en cada horizonte y cuenca",
+    "status.global idéntico a metrics.global"
+  ],
+  "basin_distribution": {
+    "rmse": {
+      "mean": 0.06410049692754838,
+      "median": 0.0370803769329477,
+      "negative_count": 0
+    },
+    "mae": {
+      "mean": 0.021786146299915758,
+      "median": 0.016014098849165534,
+      "negative_count": 0
+    },
+    "nse": {
+      "mean": -83.50979073291454,
+      "median": 0.5623444020817953,
+      "negative_count": 80
+    },
+    "kge2009": {
+      "mean": -1.364834276400466,
+      "median": 0.6238706047762688,
+      "negative_count": 68
+    }
+  },
+  "paired_comparison": {
+    "per_horizon": {
+      "rmse": {
+        "dmel_better": 0,
+        "lstm_better": 48,
+        "ties": 0
+      },
+      "mae": {
+        "dmel_better": 0,
+        "lstm_better": 48,
+        "ties": 0
+      },
+      "nse": {
+        "dmel_better": 0,
+        "lstm_better": 48,
+        "ties": 0
+      },
+      "kge2009": {
+        "dmel_better": 14,
+        "lstm_better": 34,
+        "ties": 0
+      }
+    },
+    "per_basin": {
+      "rmse": {
+        "dmel_better": 252,
+        "lstm_better": 256,
+        "ties": 0
+      },
+      "mae": {
+        "dmel_better": 175,
+        "lstm_better": 333,
+        "ties": 0
+      },
+      "nse": {
+        "dmel_better": 252,
+        "lstm_better": 256,
+        "ties": 0
+      },
+      "kge2009": {
+        "dmel_better": 208,
+        "lstm_better": 300,
+        "ties": 0
+      }
+    }
+  }
+}

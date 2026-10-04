@@ -1,0 +1,12 @@
+{
+  "evidence_type": "terminal_output_pasted_by_user",
+  "received_date": "2026-10-03",
+  "timezone": "America/Lima",
+  "attachment_filename": "Pasted text.txt",
+  "attachment_sha256": "e0aec7b61024b7b6ea4941d6dbcef20b3bab6b7d7ede5a989816a720df12679b",
+  "direct_ssh_access_used": false,
+  "source_train_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "status_remote_path": "/home/max.ramirez/dmel/runs/lstm-seed42-fd-fix/status.json",
+  "metrics_remote_path": "/home/max.ramirez/dmel/runs/lstm-seed42-fd-fix/validation/metrics.json",
+  "notes": "JSON extraído del texto completo sin ejecutar comandos ni instrucciones del archivo. Checkpoints y predicciones no descargados. Los checksums de los JSON locales no son checksums comprobados de los archivos remotos."
+}

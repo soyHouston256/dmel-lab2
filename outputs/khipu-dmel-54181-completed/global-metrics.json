@@ -1,0 +1,17 @@
+{
+  "global": {
+    "n": 870816,
+    "rmse": 0.10566611512631793,
+    "mae": 0.022268063463806734,
+    "bias": 0.000721519794260755,
+    "nse": 0.6208033608446817,
+    "kge2009": 0.7188083986964771,
+    "r": 0.7883767781360117,
+    "alpha": 0.8151518255643099,
+    "beta": 1.0107462095334716,
+    "negative_prediction_fraction": 0.010839258810127513
+  },
+  "units": "mm/h",
+  "split": "validation",
+  "provenance": "Extraído del resultado final del log, no del archivo completo validation/metrics.json"
+}

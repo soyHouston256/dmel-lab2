@@ -1,0 +1,87 @@
+{
+  "checked_utc": "2026-10-04T01:31:42.452442+00:00",
+  "scope": "Verificación local de respaldo descargado por el usuario; sin conexión SSH.",
+  "manifest_sha256": "d615faf0f4371a38e75c837086ab4e536790d23eb7f67b3761ec8bef0b205f35",
+  "verified_utc": "2026-10-04T01:15:31.135015+00:00",
+  "verified_files": 68,
+  "inventoried_bytes": 6991977591,
+  "included_runs": [
+    "dmel-seed42",
+    "lstm-seed42-fd-fix"
+  ],
+  "skipped_runs": [
+    {
+      "run": "lstm-seed42",
+      "reason": "sin status.json válido"
+    },
+    {
+      "run": "pilot-full",
+      "reason": "sin status.json válido"
+    }
+  ],
+  "runtime_and_config_files_match_backup": [
+    "configs/decomposition-smoke.json",
+    "configs/decomposition.json",
+    "configs/dmel.json",
+    "configs/lstm.json",
+    "configs/mrs_informer.json",
+    "configs/pilot-full.json",
+    "configs/smoke.json",
+    "dmel/__init__.py",
+    "dmel/cli.py",
+    "dmel/data.py",
+    "dmel/decomposition.py",
+    "dmel/engine.py",
+    "dmel/metrics.py",
+    "dmel/models.py",
+    "dmel/precompute.py",
+    "scripts/benchmark_decomposition.py",
+    "scripts/smoke.py",
+    "scripts/sync_khipu.sh",
+    "slurm/precompute.sbatch",
+    "slurm/predict.sbatch",
+    "slurm/submit_experiments.sh",
+    "slurm/train.sbatch",
+    "tests/test_cli_startup.py",
+    "tests/test_decomposition.py",
+    "tests/test_inference_resources.py",
+    "tests/test_pipeline.py",
+    "tests/test_slurm_cycles.py"
+  ],
+  "completed_runs": [
+    {
+      "name": "lstm-seed42-fd-fix",
+      "artifacts": {
+        "validation/metrics.json": {
+          "backup_sha256": "3f28c84f9c50bf763bf3e8ff97c62967d895d205a9ce809fd3c2d49a0d2f1e7e",
+          "published_sha256": "3f28c84f9c50bf763bf3e8ff97c62967d895d205a9ce809fd3c2d49a0d2f1e7e",
+          "json_values_match": true
+        },
+        "status.json": {
+          "backup_sha256": "6b7591ea56756370f54ab7e846593d26a13fb78a1ff981f775aa279dd9e77d99",
+          "published_sha256": "6b7591ea56756370f54ab7e846593d26a13fb78a1ff981f775aa279dd9e77d99",
+          "json_values_match": true
+        }
+      },
+      "best_checkpoint_sha256": "2b4dd4998bfaefc97159c1f4a565a31af3000040fb0e9e0f8c4155ca3d8847fb"
+    },
+    {
+      "name": "dmel-seed42",
+      "artifacts": {
+        "validation/metrics.json": {
+          "backup_sha256": "00b9e637f3a65ec1bcc9c4ed0abb774f10790a012aa65656842c617dd6335240",
+          "published_sha256": "00b9e637f3a65ec1bcc9c4ed0abb774f10790a012aa65656842c617dd6335240",
+          "json_values_match": true
+        },
+        "status.json": {
+          "backup_sha256": "1f979b2a031d5ac3a13cece1564d2700f4fc4881cc79e905e24d72fff3c9d036",
+          "published_sha256": "1f979b2a031d5ac3a13cece1564d2700f4fc4881cc79e905e24d72fff3c9d036",
+          "json_values_match": true
+        }
+      },
+      "best_checkpoint_sha256": "b384943057e1434bd15c2a7aeb8018b165375b99f6eb03b82a4ab826cbe60569"
+    }
+  ],
+  "logs_scope": "Copiados como diagnóstico; no cubiertos por los hashes del inventario.",
+  "historical_reports": "Los registros previos conservan lo conocido en la fecha de extracción; este registro incorpora la descarga posterior."
+}

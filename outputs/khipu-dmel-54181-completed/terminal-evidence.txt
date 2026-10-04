@@ -1,0 +1,843 @@
+[max.ramirez@khipu ~]$ sacct -j 54181 --format=JobID,State,ExitCode,Elapsed
+JobID             State ExitCode    Elapsed 
+------------ ---------- -------- ---------- 
+54181         COMPLETED      0:0   00:13:01 
+54181.batch   COMPLETED      0:0   00:13:01 
+[max.ramirez@khipu ~]$ cat /home/max.ramirez/dmel/logs/lab2_dmel_54181.out
+date=2026-10-03T03:16:37-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=0 resume=0 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": false, "start_epoch": 0, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 0, "batches_done": 500, "batches_total": 7938, "seconds": 40.974}
+{"event": "train_progress", "epoch": 0, "batches_done": 1000, "batches_total": 7938, "seconds": 69.454}
+{"event": "train_progress", "epoch": 0, "batches_done": 1500, "batches_total": 7938, "seconds": 98.55}
+{"event": "train_progress", "epoch": 0, "batches_done": 2000, "batches_total": 7938, "seconds": 128.46}
+{"event": "train_progress", "epoch": 0, "batches_done": 2500, "batches_total": 7938, "seconds": 158.736}
+{"event": "train_progress", "epoch": 0, "batches_done": 3000, "batches_total": 7938, "seconds": 188.974}
+{"event": "train_progress", "epoch": 0, "batches_done": 3500, "batches_total": 7938, "seconds": 219.156}
+{"event": "train_progress", "epoch": 0, "batches_done": 4000, "batches_total": 7938, "seconds": 249.613}
+{"event": "train_progress", "epoch": 0, "batches_done": 4500, "batches_total": 7938, "seconds": 280.272}
+{"event": "train_progress", "epoch": 0, "batches_done": 5000, "batches_total": 7938, "seconds": 310.421}
+{"event": "train_progress", "epoch": 0, "batches_done": 5500, "batches_total": 7938, "seconds": 339.032}
+{"event": "train_progress", "epoch": 0, "batches_done": 6000, "batches_total": 7938, "seconds": 369.584}
+{"event": "train_progress", "epoch": 0, "batches_done": 6500, "batches_total": 7938, "seconds": 399.772}
+{"event": "train_progress", "epoch": 0, "batches_done": 7000, "batches_total": 7938, "seconds": 430.368}
+{"event": "train_progress", "epoch": 0, "batches_done": 7500, "batches_total": 7938, "seconds": 460.15}
+{"epoch": 0, "train_mse_normalized": 0.4800317551078583, "val_rmse_mm_h": 0.11337807093238428, "seconds": 519.6832760828547, "peak_cuda_mib": 746.35400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 1,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.11337807093238428
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (1/99 reinicios)
+[2026-10-03T03:30:23.334] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T03:30:23 DUE TO JOB REQUEUE ***
+date=2026-10-03T03:44:58-05:00 job=54181 node=ds001 cuda_devices=0 shards=4 restart=1 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 1, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 1, "batches_done": 500, "batches_total": 7938, "seconds": 76.351}
+{"event": "train_progress", "epoch": 1, "batches_done": 1000, "batches_total": 7938, "seconds": 115.457}
+{"event": "train_progress", "epoch": 1, "batches_done": 1500, "batches_total": 7938, "seconds": 148.488}
+{"event": "train_progress", "epoch": 1, "batches_done": 2000, "batches_total": 7938, "seconds": 183.621}
+{"event": "train_progress", "epoch": 1, "batches_done": 2500, "batches_total": 7938, "seconds": 218.748}
+{"event": "train_progress", "epoch": 1, "batches_done": 3000, "batches_total": 7938, "seconds": 254.112}
+{"event": "train_progress", "epoch": 1, "batches_done": 3500, "batches_total": 7938, "seconds": 282.568}
+{"event": "train_progress", "epoch": 1, "batches_done": 4000, "batches_total": 7938, "seconds": 310.798}
+{"event": "train_progress", "epoch": 1, "batches_done": 4500, "batches_total": 7938, "seconds": 338.928}
+{"event": "train_progress", "epoch": 1, "batches_done": 5000, "batches_total": 7938, "seconds": 366.134}
+{"event": "train_progress", "epoch": 1, "batches_done": 5500, "batches_total": 7938, "seconds": 394.385}
+{"event": "train_progress", "epoch": 1, "batches_done": 6000, "batches_total": 7938, "seconds": 422.506}
+{"event": "train_progress", "epoch": 1, "batches_done": 6500, "batches_total": 7938, "seconds": 450.559}
+{"event": "train_progress", "epoch": 1, "batches_done": 7000, "batches_total": 7938, "seconds": 477.773}
+{"event": "train_progress", "epoch": 1, "batches_done": 7500, "batches_total": 7938, "seconds": 505.746}
+{"epoch": 1, "train_mse_normalized": 0.4432140332518629, "val_rmse_mm_h": 0.11240664609369266, "seconds": 567.7703943208326, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 2,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.11240664609369266
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (2/99 reinicios)
+[2026-10-03T03:55:12.619] error: *** JOB 54181 ON ds001 CANCELLED AT 2026-10-03T03:55:12 DUE TO JOB REQUEUE ***
+date=2026-10-03T03:57:18-05:00 job=54181 node=ds001 cuda_devices=0 shards=4 restart=2 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 2, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 2, "batches_done": 500, "batches_total": 7938, "seconds": 35.045}
+{"event": "train_progress", "epoch": 2, "batches_done": 1000, "batches_total": 7938, "seconds": 63.144}
+{"event": "train_progress", "epoch": 2, "batches_done": 1500, "batches_total": 7938, "seconds": 91.759}
+{"event": "train_progress", "epoch": 2, "batches_done": 2000, "batches_total": 7938, "seconds": 119.69}
+{"event": "train_progress", "epoch": 2, "batches_done": 2500, "batches_total": 7938, "seconds": 146.912}
+{"event": "train_progress", "epoch": 2, "batches_done": 3000, "batches_total": 7938, "seconds": 174.425}
+{"event": "train_progress", "epoch": 2, "batches_done": 3500, "batches_total": 7938, "seconds": 204.654}
+{"event": "train_progress", "epoch": 2, "batches_done": 4000, "batches_total": 7938, "seconds": 249.559}
+{"event": "train_progress", "epoch": 2, "batches_done": 4500, "batches_total": 7938, "seconds": 310.397}
+{"event": "train_progress", "epoch": 2, "batches_done": 5000, "batches_total": 7938, "seconds": 423.449}
+{"event": "train_progress", "epoch": 2, "batches_done": 5500, "batches_total": 7938, "seconds": 454.513}
+{"event": "train_progress", "epoch": 2, "batches_done": 6000, "batches_total": 7938, "seconds": 481.691}
+{"event": "train_progress", "epoch": 2, "batches_done": 6500, "batches_total": 7938, "seconds": 508.655}
+{"event": "train_progress", "epoch": 2, "batches_done": 7000, "batches_total": 7938, "seconds": 535.902}
+{"event": "train_progress", "epoch": 2, "batches_done": 7500, "batches_total": 7938, "seconds": 563.638}
+{"epoch": 2, "train_mse_normalized": 0.43267260821307385, "val_rmse_mm_h": 0.11035761785501315, "seconds": 622.9432093659416, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 3,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.11035761785501315
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (3/99 reinicios)
+[2026-10-03T04:08:55.009] error: *** JOB 54181 ON ds001 CANCELLED AT 2026-10-03T04:08:55 DUE TO JOB REQUEUE ***
+date=2026-10-03T04:11:12-05:00 job=54181 node=ds001 cuda_devices=0 shards=4 restart=3 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 3, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 3, "batches_done": 500, "batches_total": 7938, "seconds": 111.925}
+{"event": "train_progress", "epoch": 3, "batches_done": 1000, "batches_total": 7938, "seconds": 218.882}
+{"event": "train_progress", "epoch": 3, "batches_done": 1500, "batches_total": 7938, "seconds": 422.353}
+{"event": "train_progress", "epoch": 3, "batches_done": 2000, "batches_total": 7938, "seconds": 484.882}
+{"event": "train_progress", "epoch": 3, "batches_done": 2500, "batches_total": 7938, "seconds": 514.14}
+{"event": "train_progress", "epoch": 3, "batches_done": 3000, "batches_total": 7938, "seconds": 542.052}
+{"event": "train_progress", "epoch": 3, "batches_done": 3500, "batches_total": 7938, "seconds": 570.833}
+{"event": "train_progress", "epoch": 3, "batches_done": 4000, "batches_total": 7938, "seconds": 599.301}
+{"event": "train_progress", "epoch": 3, "batches_done": 4500, "batches_total": 7938, "seconds": 627.344}
+{"event": "train_progress", "epoch": 3, "batches_done": 5000, "batches_total": 7938, "seconds": 654.327}
+{"event": "train_progress", "epoch": 3, "batches_done": 5500, "batches_total": 7938, "seconds": 683.084}
+{"event": "train_progress", "epoch": 3, "batches_done": 6000, "batches_total": 7938, "seconds": 711.273}
+{"event": "train_progress", "epoch": 3, "batches_done": 6500, "batches_total": 7938, "seconds": 740.791}
+{"event": "train_progress", "epoch": 3, "batches_done": 7000, "batches_total": 7938, "seconds": 769.542}
+{"event": "train_progress", "epoch": 3, "batches_done": 7500, "batches_total": 7938, "seconds": 798.513}
+{"epoch": 3, "train_mse_normalized": 0.42697134814912996, "val_rmse_mm_h": 0.10877859628378496, "seconds": 887.4911329341121, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 4,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10877859628378496
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (4/99 reinicios)
+[2026-10-03T04:27:42.172] error: *** JOB 54181 ON ds001 CANCELLED AT 2026-10-03T04:27:42 DUE TO JOB REQUEUE ***
+date=2026-10-03T04:29:48-05:00 job=54181 node=ds001 cuda_devices=0 shards=4 restart=4 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 4, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 4, "batches_done": 500, "batches_total": 7938, "seconds": 36.058}
+{"event": "train_progress", "epoch": 4, "batches_done": 1000, "batches_total": 7938, "seconds": 62.344}
+{"event": "train_progress", "epoch": 4, "batches_done": 1500, "batches_total": 7938, "seconds": 90.265}
+{"event": "train_progress", "epoch": 4, "batches_done": 2000, "batches_total": 7938, "seconds": 118.537}
+{"event": "train_progress", "epoch": 4, "batches_done": 2500, "batches_total": 7938, "seconds": 145.956}
+{"event": "train_progress", "epoch": 4, "batches_done": 3000, "batches_total": 7938, "seconds": 173.167}
+{"event": "train_progress", "epoch": 4, "batches_done": 3500, "batches_total": 7938, "seconds": 200.016}
+{"event": "train_progress", "epoch": 4, "batches_done": 4000, "batches_total": 7938, "seconds": 228.524}
+{"event": "train_progress", "epoch": 4, "batches_done": 4500, "batches_total": 7938, "seconds": 255.739}
+{"event": "train_progress", "epoch": 4, "batches_done": 5000, "batches_total": 7938, "seconds": 284.002}
+{"event": "train_progress", "epoch": 4, "batches_done": 5500, "batches_total": 7938, "seconds": 311.885}
+{"event": "train_progress", "epoch": 4, "batches_done": 6000, "batches_total": 7938, "seconds": 339.967}
+{"event": "train_progress", "epoch": 4, "batches_done": 6500, "batches_total": 7938, "seconds": 368.342}
+{"event": "train_progress", "epoch": 4, "batches_done": 7000, "batches_total": 7938, "seconds": 396.27}
+{"event": "train_progress", "epoch": 4, "batches_done": 7500, "batches_total": 7938, "seconds": 424.234}
+{"epoch": 4, "train_mse_normalized": 0.42023068110119755, "val_rmse_mm_h": 0.10972419430796292, "seconds": 482.4387138248421, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 5,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10877859628378496
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (5/99 reinicios)
+[2026-10-03T04:39:07.450] error: *** JOB 54181 ON ds001 CANCELLED AT 2026-10-03T04:39:07 DUE TO JOB REQUEUE ***
+date=2026-10-03T04:41:13-05:00 job=54181 node=ds001 cuda_devices=0 shards=4 restart=5 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 5, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 5, "batches_done": 500, "batches_total": 7938, "seconds": 35.03}
+{"event": "train_progress", "epoch": 5, "batches_done": 1000, "batches_total": 7938, "seconds": 62.36}
+{"event": "train_progress", "epoch": 5, "batches_done": 1500, "batches_total": 7938, "seconds": 90.484}
+{"event": "train_progress", "epoch": 5, "batches_done": 2000, "batches_total": 7938, "seconds": 118.366}
+{"event": "train_progress", "epoch": 5, "batches_done": 2500, "batches_total": 7938, "seconds": 145.856}
+{"event": "train_progress", "epoch": 5, "batches_done": 3000, "batches_total": 7938, "seconds": 171.802}
+{"event": "train_progress", "epoch": 5, "batches_done": 3500, "batches_total": 7938, "seconds": 198.835}
+{"event": "train_progress", "epoch": 5, "batches_done": 4000, "batches_total": 7938, "seconds": 226.095}
+{"event": "train_progress", "epoch": 5, "batches_done": 4500, "batches_total": 7938, "seconds": 253.999}
+{"event": "train_progress", "epoch": 5, "batches_done": 5000, "batches_total": 7938, "seconds": 281.383}
+{"event": "train_progress", "epoch": 5, "batches_done": 5500, "batches_total": 7938, "seconds": 307.758}
+{"event": "train_progress", "epoch": 5, "batches_done": 6000, "batches_total": 7938, "seconds": 334.785}
+{"event": "train_progress", "epoch": 5, "batches_done": 6500, "batches_total": 7938, "seconds": 358.372}
+{"event": "train_progress", "epoch": 5, "batches_done": 7000, "batches_total": 7938, "seconds": 385.741}
+{"event": "train_progress", "epoch": 5, "batches_done": 7500, "batches_total": 7938, "seconds": 413.003}
+{"epoch": 5, "train_mse_normalized": 0.4136764497939116, "val_rmse_mm_h": 0.1079381548045851, "seconds": 468.7692171339877, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 6,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.1079381548045851
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (6/99 reinicios)
+[2026-10-03T04:50:17.332] error: *** JOB 54181 ON ds001 CANCELLED AT 2026-10-03T04:50:17 DUE TO JOB REQUEUE ***
+date=2026-10-03T04:52:18-05:00 job=54181 node=ds001 cuda_devices=0 shards=4 restart=6 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 6, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 6, "batches_done": 500, "batches_total": 7938, "seconds": 36.796}
+{"event": "train_progress", "epoch": 6, "batches_done": 1000, "batches_total": 7938, "seconds": 64.764}
+{"event": "train_progress", "epoch": 6, "batches_done": 1500, "batches_total": 7938, "seconds": 93.242}
+{"event": "train_progress", "epoch": 6, "batches_done": 2000, "batches_total": 7938, "seconds": 121.245}
+{"event": "train_progress", "epoch": 6, "batches_done": 2500, "batches_total": 7938, "seconds": 149.949}
+{"event": "train_progress", "epoch": 6, "batches_done": 3000, "batches_total": 7938, "seconds": 178.199}
+{"event": "train_progress", "epoch": 6, "batches_done": 3500, "batches_total": 7938, "seconds": 203.544}
+{"event": "train_progress", "epoch": 6, "batches_done": 4000, "batches_total": 7938, "seconds": 229.5}
+{"event": "train_progress", "epoch": 6, "batches_done": 4500, "batches_total": 7938, "seconds": 257.144}
+{"event": "train_progress", "epoch": 6, "batches_done": 5000, "batches_total": 7938, "seconds": 284.724}
+{"event": "train_progress", "epoch": 6, "batches_done": 5500, "batches_total": 7938, "seconds": 310.287}
+{"event": "train_progress", "epoch": 6, "batches_done": 6000, "batches_total": 7938, "seconds": 338.1}
+{"event": "train_progress", "epoch": 6, "batches_done": 6500, "batches_total": 7938, "seconds": 364.149}
+{"event": "train_progress", "epoch": 6, "batches_done": 7000, "batches_total": 7938, "seconds": 392.943}
+{"event": "train_progress", "epoch": 6, "batches_done": 7500, "batches_total": 7938, "seconds": 421.671}
+{"epoch": 6, "train_mse_normalized": 0.4097784059107245, "val_rmse_mm_h": 0.10798686057183982, "seconds": 481.9245756699238, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 7,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.1079381548045851
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (7/99 reinicios)
+[2026-10-03T05:01:34.956] error: *** JOB 54181 ON ds001 CANCELLED AT 2026-10-03T05:01:34 DUE TO JOB REQUEUE ***
+date=2026-10-03T07:26:26-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=7 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 7, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 7, "batches_done": 500, "batches_total": 7938, "seconds": 37.369}
+{"event": "train_progress", "epoch": 7, "batches_done": 1000, "batches_total": 7938, "seconds": 65.86}
+{"event": "train_progress", "epoch": 7, "batches_done": 1500, "batches_total": 7938, "seconds": 95.634}
+{"event": "train_progress", "epoch": 7, "batches_done": 2000, "batches_total": 7938, "seconds": 125.212}
+{"event": "train_progress", "epoch": 7, "batches_done": 2500, "batches_total": 7938, "seconds": 155.348}
+{"event": "train_progress", "epoch": 7, "batches_done": 3000, "batches_total": 7938, "seconds": 183.981}
+{"event": "train_progress", "epoch": 7, "batches_done": 3500, "batches_total": 7938, "seconds": 213.905}
+{"event": "train_progress", "epoch": 7, "batches_done": 4000, "batches_total": 7938, "seconds": 243.768}
+{"event": "train_progress", "epoch": 7, "batches_done": 4500, "batches_total": 7938, "seconds": 273.43}
+{"event": "train_progress", "epoch": 7, "batches_done": 5000, "batches_total": 7938, "seconds": 303.721}
+{"event": "train_progress", "epoch": 7, "batches_done": 5500, "batches_total": 7938, "seconds": 333.844}
+{"event": "train_progress", "epoch": 7, "batches_done": 6000, "batches_total": 7938, "seconds": 364.516}
+{"event": "train_progress", "epoch": 7, "batches_done": 6500, "batches_total": 7938, "seconds": 394.732}
+{"event": "train_progress", "epoch": 7, "batches_done": 7000, "batches_total": 7938, "seconds": 424.981}
+{"event": "train_progress", "epoch": 7, "batches_done": 7500, "batches_total": 7938, "seconds": 455.604}
+{"epoch": 7, "train_mse_normalized": 0.4022333960660887, "val_rmse_mm_h": 0.10790104213469658, "seconds": 516.0087831290439, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 8,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10790104213469658
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (8/99 reinicios)
+[2026-10-03T07:36:18.069] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T07:36:18 DUE TO JOB REQUEUE ***
+date=2026-10-03T09:12:54-05:00 job=54181 node=ds001 cuda_devices=0 shards=4 restart=8 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 8, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 8, "batches_done": 500, "batches_total": 7938, "seconds": 35.874}
+{"event": "train_progress", "epoch": 8, "batches_done": 1000, "batches_total": 7938, "seconds": 60.806}
+{"event": "train_progress", "epoch": 8, "batches_done": 1500, "batches_total": 7938, "seconds": 88.692}
+{"event": "train_progress", "epoch": 8, "batches_done": 2000, "batches_total": 7938, "seconds": 117.171}
+{"event": "train_progress", "epoch": 8, "batches_done": 2500, "batches_total": 7938, "seconds": 143.587}
+{"event": "train_progress", "epoch": 8, "batches_done": 3000, "batches_total": 7938, "seconds": 171.511}
+{"event": "train_progress", "epoch": 8, "batches_done": 3500, "batches_total": 7938, "seconds": 200.538}
+{"event": "train_progress", "epoch": 8, "batches_done": 4000, "batches_total": 7938, "seconds": 227.581}
+{"event": "train_progress", "epoch": 8, "batches_done": 4500, "batches_total": 7938, "seconds": 254.434}
+{"event": "train_progress", "epoch": 8, "batches_done": 5000, "batches_total": 7938, "seconds": 284.479}
+{"event": "train_progress", "epoch": 8, "batches_done": 5500, "batches_total": 7938, "seconds": 315.258}
+{"event": "train_progress", "epoch": 8, "batches_done": 6000, "batches_total": 7938, "seconds": 345.928}
+{"event": "train_progress", "epoch": 8, "batches_done": 6500, "batches_total": 7938, "seconds": 376.539}
+{"event": "train_progress", "epoch": 8, "batches_done": 7000, "batches_total": 7938, "seconds": 406.713}
+{"event": "train_progress", "epoch": 8, "batches_done": 7500, "batches_total": 7938, "seconds": 436.793}
+{"epoch": 8, "train_mse_normalized": 0.400705879654486, "val_rmse_mm_h": 0.10892555786156025, "seconds": 500.42659432417713, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 9,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10790104213469658
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (9/99 reinicios)
+[2026-10-03T09:22:30.022] error: *** JOB 54181 ON ds001 CANCELLED AT 2026-10-03T09:22:30 DUE TO JOB REQUEUE ***
+date=2026-10-03T11:31:05-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=9 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 9, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 9, "batches_done": 500, "batches_total": 7938, "seconds": 35.549}
+{"event": "train_progress", "epoch": 9, "batches_done": 1000, "batches_total": 7938, "seconds": 64.633}
+{"event": "train_progress", "epoch": 9, "batches_done": 1500, "batches_total": 7938, "seconds": 94.43}
+{"event": "train_progress", "epoch": 9, "batches_done": 2000, "batches_total": 7938, "seconds": 123.691}
+{"event": "train_progress", "epoch": 9, "batches_done": 2500, "batches_total": 7938, "seconds": 153.949}
+{"event": "train_progress", "epoch": 9, "batches_done": 3000, "batches_total": 7938, "seconds": 182.987}
+{"event": "train_progress", "epoch": 9, "batches_done": 3500, "batches_total": 7938, "seconds": 213.051}
+{"event": "train_progress", "epoch": 9, "batches_done": 4000, "batches_total": 7938, "seconds": 242.433}
+{"event": "train_progress", "epoch": 9, "batches_done": 4500, "batches_total": 7938, "seconds": 272.805}
+{"event": "train_progress", "epoch": 9, "batches_done": 5000, "batches_total": 7938, "seconds": 302.121}
+{"event": "train_progress", "epoch": 9, "batches_done": 5500, "batches_total": 7938, "seconds": 330.332}
+{"event": "train_progress", "epoch": 9, "batches_done": 6000, "batches_total": 7938, "seconds": 360.625}
+{"event": "train_progress", "epoch": 9, "batches_done": 6500, "batches_total": 7938, "seconds": 390.148}
+{"event": "train_progress", "epoch": 9, "batches_done": 7000, "batches_total": 7938, "seconds": 419.752}
+{"event": "train_progress", "epoch": 9, "batches_done": 7500, "batches_total": 7938, "seconds": 450.265}
+{"epoch": 9, "train_mse_normalized": 0.39714307791889303, "val_rmse_mm_h": 0.10566611512631793, "seconds": 510.48939919797704, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 10,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (10/99 reinicios)
+[2026-10-03T11:40:53.408] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T11:40:53 DUE TO JOB REQUEUE ***
+date=2026-10-03T13:41:21-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=10 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 10, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 10, "batches_done": 500, "batches_total": 7938, "seconds": 63.581}
+{"event": "train_progress", "epoch": 10, "batches_done": 1000, "batches_total": 7938, "seconds": 101.6}
+{"event": "train_progress", "epoch": 10, "batches_done": 1500, "batches_total": 7938, "seconds": 136.859}
+{"event": "train_progress", "epoch": 10, "batches_done": 2000, "batches_total": 7938, "seconds": 170.494}
+{"event": "train_progress", "epoch": 10, "batches_done": 2500, "batches_total": 7938, "seconds": 202.519}
+{"event": "train_progress", "epoch": 10, "batches_done": 3000, "batches_total": 7938, "seconds": 234.801}
+{"event": "train_progress", "epoch": 10, "batches_done": 3500, "batches_total": 7938, "seconds": 265.036}
+{"event": "train_progress", "epoch": 10, "batches_done": 4000, "batches_total": 7938, "seconds": 295.612}
+{"event": "train_progress", "epoch": 10, "batches_done": 4500, "batches_total": 7938, "seconds": 326.974}
+{"event": "train_progress", "epoch": 10, "batches_done": 5000, "batches_total": 7938, "seconds": 357.543}
+{"event": "train_progress", "epoch": 10, "batches_done": 5500, "batches_total": 7938, "seconds": 395.631}
+{"event": "train_progress", "epoch": 10, "batches_done": 6000, "batches_total": 7938, "seconds": 438.344}
+{"event": "train_progress", "epoch": 10, "batches_done": 6500, "batches_total": 7938, "seconds": 479.209}
+{"event": "train_progress", "epoch": 10, "batches_done": 7000, "batches_total": 7938, "seconds": 519.815}
+{"event": "train_progress", "epoch": 10, "batches_done": 7500, "batches_total": 7938, "seconds": 596.224}
+{"epoch": 10, "train_mse_normalized": 0.39390407805162386, "val_rmse_mm_h": 0.10782841053196991, "seconds": 896.8116520999465, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 11,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (11/99 reinicios)
+[2026-10-03T13:58:14.272] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T13:58:14 DUE TO JOB REQUEUE ***
+date=2026-10-03T14:00:18-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=11 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 11, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 11, "batches_done": 500, "batches_total": 7938, "seconds": 379.462}
+{"event": "train_progress", "epoch": 11, "batches_done": 1000, "batches_total": 7938, "seconds": 774.284}
+{"event": "train_progress", "epoch": 11, "batches_done": 1500, "batches_total": 7938, "seconds": 1146.751}
+{"event": "train_progress", "epoch": 11, "batches_done": 2000, "batches_total": 7938, "seconds": 1487.233}
+{"event": "train_progress", "epoch": 11, "batches_done": 2500, "batches_total": 7938, "seconds": 1775.133}
+{"event": "train_progress", "epoch": 11, "batches_done": 3000, "batches_total": 7938, "seconds": 2070.228}
+{"event": "train_progress", "epoch": 11, "batches_done": 3500, "batches_total": 7938, "seconds": 2351.096}
+{"event": "train_progress", "epoch": 11, "batches_done": 4000, "batches_total": 7938, "seconds": 2583.181}
+{"event": "train_progress", "epoch": 11, "batches_done": 4500, "batches_total": 7938, "seconds": 2795.66}
+{"event": "train_progress", "epoch": 11, "batches_done": 5000, "batches_total": 7938, "seconds": 2942.175}
+{"event": "train_progress", "epoch": 11, "batches_done": 5500, "batches_total": 7938, "seconds": 3040.937}
+{"event": "train_progress", "epoch": 11, "batches_done": 6000, "batches_total": 7938, "seconds": 3114.853}
+{"event": "train_progress", "epoch": 11, "batches_done": 6500, "batches_total": 7938, "seconds": 3171.552}
+{"event": "train_progress", "epoch": 11, "batches_done": 7000, "batches_total": 7938, "seconds": 3214.179}
+{"event": "train_progress", "epoch": 11, "batches_done": 7500, "batches_total": 7938, "seconds": 3246.468}
+{"epoch": 11, "train_mse_normalized": 0.3874224836463182, "val_rmse_mm_h": 0.10623397256045482, "seconds": 3372.9122534960043, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 12,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (12/99 reinicios)
+[2026-10-03T15:00:20.546] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T15:00:20 DUE TO JOB REQUEUE ***
+date=2026-10-03T15:03:17-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=12 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 12, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 12, "batches_done": 500, "batches_total": 7938, "seconds": 47.462}
+{"event": "train_progress", "epoch": 12, "batches_done": 1000, "batches_total": 7938, "seconds": 78.467}
+{"event": "train_progress", "epoch": 12, "batches_done": 1500, "batches_total": 7938, "seconds": 109.514}
+{"event": "train_progress", "epoch": 12, "batches_done": 2000, "batches_total": 7938, "seconds": 140.405}
+{"event": "train_progress", "epoch": 12, "batches_done": 2500, "batches_total": 7938, "seconds": 169.857}
+{"event": "train_progress", "epoch": 12, "batches_done": 3000, "batches_total": 7938, "seconds": 200.277}
+{"event": "train_progress", "epoch": 12, "batches_done": 3500, "batches_total": 7938, "seconds": 231.292}
+{"event": "train_progress", "epoch": 12, "batches_done": 4000, "batches_total": 7938, "seconds": 260.876}
+{"event": "train_progress", "epoch": 12, "batches_done": 4500, "batches_total": 7938, "seconds": 290.856}
+{"event": "train_progress", "epoch": 12, "batches_done": 5000, "batches_total": 7938, "seconds": 321.399}
+{"event": "train_progress", "epoch": 12, "batches_done": 5500, "batches_total": 7938, "seconds": 350.821}
+{"event": "train_progress", "epoch": 12, "batches_done": 6000, "batches_total": 7938, "seconds": 381.15}
+{"event": "train_progress", "epoch": 12, "batches_done": 6500, "batches_total": 7938, "seconds": 411.176}
+{"event": "train_progress", "epoch": 12, "batches_done": 7000, "batches_total": 7938, "seconds": 441.42}
+{"event": "train_progress", "epoch": 12, "batches_done": 7500, "batches_total": 7938, "seconds": 471.129}
+{"epoch": 12, "train_mse_normalized": 0.3836990735643932, "val_rmse_mm_h": 0.10676046058986084, "seconds": 546.4902786540333, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 13,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (13/99 reinicios)
+[2026-10-03T15:14:00.474] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T15:14:00 DUE TO JOB REQUEUE ***
+date=2026-10-03T15:16:17-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=13 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 13, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 13, "batches_done": 500, "batches_total": 7938, "seconds": 42.498}
+{"event": "train_progress", "epoch": 13, "batches_done": 1000, "batches_total": 7938, "seconds": 73.18}
+{"event": "train_progress", "epoch": 13, "batches_done": 1500, "batches_total": 7938, "seconds": 104.234}
+{"event": "train_progress", "epoch": 13, "batches_done": 2000, "batches_total": 7938, "seconds": 134.972}
+{"event": "train_progress", "epoch": 13, "batches_done": 2500, "batches_total": 7938, "seconds": 163.516}
+{"event": "train_progress", "epoch": 13, "batches_done": 3000, "batches_total": 7938, "seconds": 193.972}
+{"event": "train_progress", "epoch": 13, "batches_done": 3500, "batches_total": 7938, "seconds": 223.902}
+{"event": "train_progress", "epoch": 13, "batches_done": 4000, "batches_total": 7938, "seconds": 253.251}
+{"event": "train_progress", "epoch": 13, "batches_done": 4500, "batches_total": 7938, "seconds": 283.371}
+{"event": "train_progress", "epoch": 13, "batches_done": 5000, "batches_total": 7938, "seconds": 313.435}
+{"event": "train_progress", "epoch": 13, "batches_done": 5500, "batches_total": 7938, "seconds": 343.922}
+{"event": "train_progress", "epoch": 13, "batches_done": 6000, "batches_total": 7938, "seconds": 372.553}
+{"event": "train_progress", "epoch": 13, "batches_done": 6500, "batches_total": 7938, "seconds": 402.361}
+{"event": "train_progress", "epoch": 13, "batches_done": 7000, "batches_total": 7938, "seconds": 429.03}
+{"event": "train_progress", "epoch": 13, "batches_done": 7500, "batches_total": 7938, "seconds": 458.517}
+{"epoch": 13, "train_mse_normalized": 0.37757057019626705, "val_rmse_mm_h": 0.10869745610934416, "seconds": 532.4953399780206, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 14,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (14/99 reinicios)
+[2026-10-03T15:26:29.193] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T15:26:29 DUE TO JOB REQUEUE ***
+date=2026-10-03T15:29:17-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=14 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 14, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 14, "batches_done": 500, "batches_total": 7938, "seconds": 44.069}
+{"event": "train_progress", "epoch": 14, "batches_done": 1000, "batches_total": 7938, "seconds": 74.477}
+{"event": "train_progress", "epoch": 14, "batches_done": 1500, "batches_total": 7938, "seconds": 105.325}
+{"event": "train_progress", "epoch": 14, "batches_done": 2000, "batches_total": 7938, "seconds": 135.09}
+{"event": "train_progress", "epoch": 14, "batches_done": 2500, "batches_total": 7938, "seconds": 163.894}
+{"event": "train_progress", "epoch": 14, "batches_done": 3000, "batches_total": 7938, "seconds": 196.177}
+{"event": "train_progress", "epoch": 14, "batches_done": 3500, "batches_total": 7938, "seconds": 225.212}
+{"event": "train_progress", "epoch": 14, "batches_done": 4000, "batches_total": 7938, "seconds": 254.726}
+{"event": "train_progress", "epoch": 14, "batches_done": 4500, "batches_total": 7938, "seconds": 284.703}
+{"event": "train_progress", "epoch": 14, "batches_done": 5000, "batches_total": 7938, "seconds": 312.618}
+{"event": "train_progress", "epoch": 14, "batches_done": 5500, "batches_total": 7938, "seconds": 342.86}
+{"event": "train_progress", "epoch": 14, "batches_done": 6000, "batches_total": 7938, "seconds": 360.513}
+{"event": "train_progress", "epoch": 14, "batches_done": 6500, "batches_total": 7938, "seconds": 388.166}
+{"event": "train_progress", "epoch": 14, "batches_done": 7000, "batches_total": 7938, "seconds": 418.06}
+{"event": "train_progress", "epoch": 14, "batches_done": 7500, "batches_total": 7938, "seconds": 447.785}
+{"epoch": 14, "train_mse_normalized": 0.37231697057334223, "val_rmse_mm_h": 0.10729351849229328, "seconds": 515.334337517852, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 15,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (15/99 reinicios)
+[2026-10-03T15:39:14.583] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T15:39:14 DUE TO JOB REQUEUE ***
+date=2026-10-03T15:41:17-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=15 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 15, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 15, "batches_done": 500, "batches_total": 7938, "seconds": 60.102}
+{"event": "train_progress", "epoch": 15, "batches_done": 1000, "batches_total": 7938, "seconds": 99.327}
+{"event": "train_progress", "epoch": 15, "batches_done": 1500, "batches_total": 7938, "seconds": 135.599}
+{"event": "train_progress", "epoch": 15, "batches_done": 2000, "batches_total": 7938, "seconds": 169.337}
+{"event": "train_progress", "epoch": 15, "batches_done": 2500, "batches_total": 7938, "seconds": 202.575}
+{"event": "train_progress", "epoch": 15, "batches_done": 3000, "batches_total": 7938, "seconds": 234.074}
+{"event": "train_progress", "epoch": 15, "batches_done": 3500, "batches_total": 7938, "seconds": 265.03}
+{"event": "train_progress", "epoch": 15, "batches_done": 4000, "batches_total": 7938, "seconds": 295.701}
+{"event": "train_progress", "epoch": 15, "batches_done": 4500, "batches_total": 7938, "seconds": 325.537}
+{"event": "train_progress", "epoch": 15, "batches_done": 5000, "batches_total": 7938, "seconds": 356.068}
+{"event": "train_progress", "epoch": 15, "batches_done": 5500, "batches_total": 7938, "seconds": 386.835}
+{"event": "train_progress", "epoch": 15, "batches_done": 6000, "batches_total": 7938, "seconds": 417.081}
+{"event": "train_progress", "epoch": 15, "batches_done": 6500, "batches_total": 7938, "seconds": 447.413}
+{"event": "train_progress", "epoch": 15, "batches_done": 7000, "batches_total": 7938, "seconds": 477.11}
+{"event": "train_progress", "epoch": 15, "batches_done": 7500, "batches_total": 7938, "seconds": 507.407}
+{"epoch": 15, "train_mse_normalized": 0.37277265004520344, "val_rmse_mm_h": 0.10765975293595755, "seconds": 600.5421214387752, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 16,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (16/99 reinicios)
+[2026-10-03T15:52:36.519] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T15:52:36 DUE TO JOB REQUEUE ***
+date=2026-10-03T15:55:14-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=16 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 16, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 16, "batches_done": 500, "batches_total": 7938, "seconds": 62.19}
+{"event": "train_progress", "epoch": 16, "batches_done": 1000, "batches_total": 7938, "seconds": 101.871}
+{"event": "train_progress", "epoch": 16, "batches_done": 1500, "batches_total": 7938, "seconds": 138.162}
+{"event": "train_progress", "epoch": 16, "batches_done": 2000, "batches_total": 7938, "seconds": 173.228}
+{"event": "train_progress", "epoch": 16, "batches_done": 2500, "batches_total": 7938, "seconds": 206.349}
+{"event": "train_progress", "epoch": 16, "batches_done": 3000, "batches_total": 7938, "seconds": 238.659}
+{"event": "train_progress", "epoch": 16, "batches_done": 3500, "batches_total": 7938, "seconds": 269.871}
+{"event": "train_progress", "epoch": 16, "batches_done": 4000, "batches_total": 7938, "seconds": 300.127}
+{"event": "train_progress", "epoch": 16, "batches_done": 4500, "batches_total": 7938, "seconds": 329.288}
+{"event": "train_progress", "epoch": 16, "batches_done": 5000, "batches_total": 7938, "seconds": 358.559}
+{"event": "train_progress", "epoch": 16, "batches_done": 5500, "batches_total": 7938, "seconds": 389.532}
+{"event": "train_progress", "epoch": 16, "batches_done": 6000, "batches_total": 7938, "seconds": 418.555}
+{"event": "train_progress", "epoch": 16, "batches_done": 6500, "batches_total": 7938, "seconds": 446.406}
+{"event": "train_progress", "epoch": 16, "batches_done": 7000, "batches_total": 7938, "seconds": 470.284}
+{"event": "train_progress", "epoch": 16, "batches_done": 7500, "batches_total": 7938, "seconds": 497.037}
+{"epoch": 16, "train_mse_normalized": 0.36560346532353444, "val_rmse_mm_h": 0.1073361843699054, "seconds": 591.3040456708986, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 17,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (17/99 reinicios)
+[2026-10-03T16:06:35.632] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T16:06:35 DUE TO JOB REQUEUE ***
+date=2026-10-03T16:09:18-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=17 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 17, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 17, "batches_done": 500, "batches_total": 7938, "seconds": 59.591}
+{"event": "train_progress", "epoch": 17, "batches_done": 1000, "batches_total": 7938, "seconds": 96.902}
+{"event": "train_progress", "epoch": 17, "batches_done": 1500, "batches_total": 7938, "seconds": 127.123}
+{"event": "train_progress", "epoch": 17, "batches_done": 2000, "batches_total": 7938, "seconds": 157.132}
+{"event": "train_progress", "epoch": 17, "batches_done": 2500, "batches_total": 7938, "seconds": 187.324}
+{"event": "train_progress", "epoch": 17, "batches_done": 3000, "batches_total": 7938, "seconds": 217.797}
+{"event": "train_progress", "epoch": 17, "batches_done": 3500, "batches_total": 7938, "seconds": 248.535}
+{"event": "train_progress", "epoch": 17, "batches_done": 4000, "batches_total": 7938, "seconds": 279.32}
+{"event": "train_progress", "epoch": 17, "batches_done": 4500, "batches_total": 7938, "seconds": 310.074}
+{"event": "train_progress", "epoch": 17, "batches_done": 5000, "batches_total": 7938, "seconds": 340.252}
+{"event": "train_progress", "epoch": 17, "batches_done": 5500, "batches_total": 7938, "seconds": 369.328}
+{"event": "train_progress", "epoch": 17, "batches_done": 6000, "batches_total": 7938, "seconds": 398.543}
+{"event": "train_progress", "epoch": 17, "batches_done": 6500, "batches_total": 7938, "seconds": 427.672}
+{"event": "train_progress", "epoch": 17, "batches_done": 7000, "batches_total": 7938, "seconds": 458.292}
+{"event": "train_progress", "epoch": 17, "batches_done": 7500, "batches_total": 7938, "seconds": 486.793}
+{"epoch": 17, "train_mse_normalized": 0.35771795432403036, "val_rmse_mm_h": 0.10895851237589403, "seconds": 546.132185177179, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 18,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (18/99 reinicios)
+[2026-10-03T16:19:52.362] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T16:19:52 DUE TO JOB REQUEUE ***
+date=2026-10-03T16:22:16-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=18 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 18, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 18, "batches_done": 500, "batches_total": 7938, "seconds": 35.043}
+{"event": "train_progress", "epoch": 18, "batches_done": 1000, "batches_total": 7938, "seconds": 64.166}
+{"event": "train_progress", "epoch": 18, "batches_done": 1500, "batches_total": 7938, "seconds": 93.36}
+{"event": "train_progress", "epoch": 18, "batches_done": 2000, "batches_total": 7938, "seconds": 123.335}
+{"event": "train_progress", "epoch": 18, "batches_done": 2500, "batches_total": 7938, "seconds": 153.233}
+{"event": "train_progress", "epoch": 18, "batches_done": 3000, "batches_total": 7938, "seconds": 182.816}
+{"event": "train_progress", "epoch": 18, "batches_done": 3500, "batches_total": 7938, "seconds": 209.767}
+{"event": "train_progress", "epoch": 18, "batches_done": 4000, "batches_total": 7938, "seconds": 239.371}
+{"event": "train_progress", "epoch": 18, "batches_done": 4500, "batches_total": 7938, "seconds": 268.648}
+{"event": "train_progress", "epoch": 18, "batches_done": 5000, "batches_total": 7938, "seconds": 298.992}
+{"event": "train_progress", "epoch": 18, "batches_done": 5500, "batches_total": 7938, "seconds": 329.335}
+{"event": "train_progress", "epoch": 18, "batches_done": 6000, "batches_total": 7938, "seconds": 359.814}
+{"event": "train_progress", "epoch": 18, "batches_done": 6500, "batches_total": 7938, "seconds": 388.679}
+{"event": "train_progress", "epoch": 18, "batches_done": 7000, "batches_total": 7938, "seconds": 418.539}
+{"event": "train_progress", "epoch": 18, "batches_done": 7500, "batches_total": 7938, "seconds": 449.313}
+{"epoch": 18, "train_mse_normalized": 0.35159630785479146, "val_rmse_mm_h": 0.1077135530569218, "seconds": 508.19299140409566, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42",
+  "complete": false,
+  "reason": "epoch_cycle_limit",
+  "epochs_completed": 19,
+  "epochs_target": 100,
+  "best_val_rmse_mm_h": 0.10566611512631793
+}
+Época guardada en runs/dmel-seed42/last.pt
+Solicitando siguiente ciclo del job 54181 (19/99 reinicios)
+[2026-10-03T16:32:01.690] error: *** JOB 54181 ON g002 CANCELLED AT 2026-10-03T16:32:01 DUE TO JOB REQUEUE ***
+date=2026-10-03T16:34:18-05:00 job=54181 node=g002 cuda_devices=0 shards=4 restart=19 resume=1 epochs_per_cycle=1
+{
+  "python": "3.12.13",
+  "platform": "Linux-4.18.0-553.123.1.el8_10.x86_64-x86_64-with-glibc2.28",
+  "torch": "2.7.1+cu126",
+  "numpy": "1.26.4",
+  "scipy": "1.16.3",
+  "h5py": "3.15.1",
+  "cuda_build": "12.6",
+  "cuda_available": true,
+  "gpu": "NVIDIA RTX A6000"
+}
+GPU smoke: 32768.0 NVIDIA RTX A6000
+{"event": "training_start", "model": "dmel", "resume": true, "start_epoch": 19, "epochs_target": 100, "epochs_per_cycle": 1, "n_train": 254000, "n_validation": 18142}
+{"event": "train_progress", "epoch": 19, "batches_done": 500, "batches_total": 7938, "seconds": 42.997}
+{"event": "train_progress", "epoch": 19, "batches_done": 1000, "batches_total": 7938, "seconds": 73.712}
+{"event": "train_progress", "epoch": 19, "batches_done": 1500, "batches_total": 7938, "seconds": 103.774}
+{"event": "train_progress", "epoch": 19, "batches_done": 2000, "batches_total": 7938, "seconds": 132.691}
+{"event": "train_progress", "epoch": 19, "batches_done": 2500, "batches_total": 7938, "seconds": 160.214}
+{"event": "train_progress", "epoch": 19, "batches_done": 3000, "batches_total": 7938, "seconds": 189.204}
+{"event": "train_progress", "epoch": 19, "batches_done": 3500, "batches_total": 7938, "seconds": 219.845}
+{"event": "train_progress", "epoch": 19, "batches_done": 4000, "batches_total": 7938, "seconds": 250.0}
+{"event": "train_progress", "epoch": 19, "batches_done": 4500, "batches_total": 7938, "seconds": 279.192}
+{"event": "train_progress", "epoch": 19, "batches_done": 5000, "batches_total": 7938, "seconds": 309.399}
+{"event": "train_progress", "epoch": 19, "batches_done": 5500, "batches_total": 7938, "seconds": 340.318}
+{"event": "train_progress", "epoch": 19, "batches_done": 6000, "batches_total": 7938, "seconds": 370.733}
+{"event": "train_progress", "epoch": 19, "batches_done": 6500, "batches_total": 7938, "seconds": 400.389}
+{"event": "train_progress", "epoch": 19, "batches_done": 7000, "batches_total": 7938, "seconds": 431.071}
+{"event": "train_progress", "epoch": 19, "batches_done": 7500, "batches_total": 7938, "seconds": 461.901}
+{"epoch": 19, "train_mse_normalized": 0.3522255457786946, "val_rmse_mm_h": 0.107939684722618, "seconds": 521.5960637649987, "peak_cuda_mib": 746.85400390625}
+{
+  "output": "runs/dmel-seed42/validation",
+  "global": {
+    "n": 870816,
+    "rmse": 0.10566611512631793,
+    "mae": 0.022268063463806734,
+    "bias": 0.000721519794260755,
+    "nse": 0.6208033608446817,
+    "kge2009": 0.7188083986964771,
+    "r": 0.7883767781360117,
+    "alpha": 0.8151518255643099,
+    "beta": 1.0107462095334716,
+    "negative_prediction_fraction": 0.010839258810127513
+  },
+  "n": 18142,
+  "source_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "split": "validation",
+  "units": "mm/h",
+  "clipping": false,
+  "persistence": false,
+  "diagnostic_subset": false,
+  "complete": true,
+  "epochs_completed": 20,
+  "epochs_target": 100,
+  "stop_reason": "early_stopping"
+}
+b384943057e1434bd15c2a7aeb8018b165375b99f6eb03b82a4ab826cbe60569  runs/dmel-seed42/best.pt
+1c72aa7a0f8cdb62f56e33f3355b00b41e585bda5c0b2bf91e6e0998311a13e3  runs/dmel-seed42/config.json

@@ -1,0 +1,21 @@
+{
+  "n": 27983,
+  "supervised": false,
+  "datasets": {
+    "X": {
+      "shape": [
+        27983,
+        336,
+        12
+      ],
+      "dtype": "float32"
+    },
+    "basin_id": {
+      "shape": [
+        27983
+      ],
+      "dtype": "int32"
+    }
+  },
+  "sha256": "2a8f641e01ecd71a37033868e111e733bdd0119909e07d0387b7be8a62a85580"
+}

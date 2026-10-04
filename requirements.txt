@@ -1,0 +1,6 @@
+# Versiones disponibles y verificadas en la prueba local; Python 3.12.
+numpy==1.26.4
+scipy==1.16.3
+h5py==3.15.1
+torch==2.7.1
+pytest==8.4.2

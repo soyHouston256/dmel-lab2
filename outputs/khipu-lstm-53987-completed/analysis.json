@@ -1,0 +1,243 @@
+{
+  "job_id": 53987,
+  "slurm_state_from_pasted_output": "COMPLETED",
+  "slurm_exit_code_from_pasted_output": "0:0",
+  "slurm_elapsed_last_record": "00:14:01",
+  "elapsed_is_not_total_all_cycles": true,
+  "epochs_completed": 20,
+  "best_epoch_zero_based": 9,
+  "best_epoch_one_based": 10,
+  "validation_windows": 18142,
+  "validation_pairs": 870816,
+  "validation_basins": 508,
+  "global": {
+    "n": 870816,
+    "rmse": 0.10228306200404642,
+    "mae": 0.02127542671589638,
+    "bias": -0.0002784329054231207,
+    "nse": 0.6446957192955849,
+    "kge2009": 0.7220572584345443,
+    "r": 0.802931869424923,
+    "alpha": 0.8040430598316141,
+    "beta": 0.9958530613207146,
+    "negative_prediction_fraction": 0.0325556719215081
+  },
+  "macro_basin": {
+    "rmse": {
+      "mean": 0.06303179819782069,
+      "valid_basins": 508
+    },
+    "mae": {
+      "mean": 0.02080898500219994,
+      "valid_basins": 508
+    },
+    "nse": {
+      "mean": -49.25251152700486,
+      "valid_basins": 508
+    },
+    "kge2009": {
+      "mean": -0.8037602243101118,
+      "valid_basins": 508
+    }
+  },
+  "basin_distribution": {
+    "nse": {
+      "median": 0.5939118442235025,
+      "mean": -49.25251152700486,
+      "min": -11659.518949599806,
+      "max": 0.9826152936202694,
+      "negative_count": 70,
+      "valid_basins": 508
+    },
+    "kge2009": {
+      "median": 0.6496217946643512,
+      "mean": -0.8037602243101121,
+      "min": -287.4794130124708,
+      "max": 0.9698912623910704,
+      "negative_count": 62,
+      "valid_basins": 508
+    },
+    "rmse": {
+      "median": 0.037832290192051546,
+      "mean": 0.06303179819782068,
+      "min": 0.0008001015668997045,
+      "max": 0.5904804614470336,
+      "negative_count": 0,
+      "valid_basins": 508
+    },
+    "mae": {
+      "median": 0.015027922022771546,
+      "mean": 0.02080898500219994,
+      "min": 0.0006418458018394867,
+      "max": 0.12921077575786816,
+      "negative_count": 0,
+      "valid_basins": 508
+    }
+  },
+  "selected_horizons": {
+    "1": {
+      "n": 18142,
+      "rmse": 0.03270539667800855,
+      "mae": 0.002359946570932714,
+      "bias": -3.48644438189523e-05,
+      "nse": 0.9685386250176471,
+      "kge2009": 0.9815056908511353,
+      "r": 0.9841637635384477,
+      "alpha": 0.9904608019046595,
+      "beta": 0.999493260100806,
+      "negative_prediction_fraction": 0.04183662220262375
+    },
+    "6": {
+      "n": 18142,
+      "rmse": 0.0633373756349369,
+      "mae": 0.009161178506293433,
+      "bias": -0.00020164661730269544,
+      "nse": 0.8857554587371446,
+      "kge2009": 0.8916740580475584,
+      "r": 0.9417245612048856,
+      "alpha": 0.9087316457585471,
+      "beta": 0.9970724673909095,
+      "negative_prediction_fraction": 0.02133171645904531
+    },
+    "12": {
+      "n": 18142,
+      "rmse": 0.0746522644021524,
+      "mae": 0.0142614350343348,
+      "bias": 9.829279267740901e-05,
+      "nse": 0.8079299608767445,
+      "kge2009": 0.8585999248630065,
+      "r": 0.8988524987434539,
+      "alpha": 0.9012021032815406,
+      "beta": 1.001462819986537,
+      "negative_prediction_fraction": 0.02458383860654834
+    },
+    "24": {
+      "n": 18142,
+      "rmse": 0.10969319889531534,
+      "mae": 0.02271596308587305,
+      "bias": 0.0004077671003074358,
+      "nse": 0.5660353508361379,
+      "kge2009": 0.6783291765658006,
+      "r": 0.7534246991710972,
+      "alpha": 0.7935174627121829,
+      "beta": 1.0061401518838857,
+      "negative_prediction_fraction": 0.043710726491015324
+    },
+    "36": {
+      "n": 18142,
+      "rmse": 0.11878579738831004,
+      "mae": 0.02831206828388964,
+      "bias": -0.0005628782088926553,
+      "nse": 0.49326070046172477,
+      "kge2009": 0.5766203073959655,
+      "r": 0.7023410767455894,
+      "alpha": 0.6990381783379478,
+      "beta": 0.9915435575818898,
+      "negative_prediction_fraction": 0.04563995149377136
+    },
+    "48": {
+      "n": 18142,
+      "rmse": 0.11964577370113398,
+      "mae": 0.03170597574756881,
+      "bias": -0.0014836145590452305,
+      "nse": 0.4798022995030372,
+      "kge2009": 0.5458666012251272,
+      "r": 0.6932791086225775,
+      "alpha": 0.6658266661078258,
+      "beta": 0.9779178445153889,
+      "negative_prediction_fraction": 0.022489251460698932
+    }
+  },
+  "worst_nse_basins": [
+    {
+      "basin_id": "377",
+      "n": 1920,
+      "rmse": 0.0131392455936834,
+      "mae": 0.0056997040034768055,
+      "bias": 0.005361253912182443,
+      "nse": -11659.518949599806,
+      "kge2009": -287.4794130124708,
+      "r": 0.09870937339380334,
+      "alpha": 98.67939806335306,
+      "beta": 272.437459834134,
+      "negative_prediction_fraction": 0.2328125,
+      "observed_std_inferred_from_rmse_nse_mm_h": 0.00012167783978634881
+    },
+    {
+      "basin_id": "17",
+      "n": 1392,
+      "rmse": 0.005230667028981105,
+      "mae": 0.003235428822038279,
+      "bias": 0.002846234927589633,
+      "nse": -6592.0963671669815,
+      "kge2009": -150.43941917859593,
+      "r": 0.0689346792146121,
+      "alpha": 68.18600333977726,
+      "beta": 136.71688087244843,
+      "negative_prediction_fraction": 0.28160919540229884,
+      "observed_std_inferred_from_rmse_nse_mm_h": 6.441876032814987e-05
+    },
+    {
+      "basin_id": "301",
+      "n": 1680,
+      "rmse": 0.00425472988365346,
+      "mae": 0.002788927013666103,
+      "bias": 0.002358271759714116,
+      "nse": -3530.1905760860845,
+      "kge2009": -62.647635154104236,
+      "r": 0.009209464916562547,
+      "alpha": 49.459717133173264,
+      "beta": 42.251613425396926,
+      "negative_prediction_fraction": 0.2505952380952381,
+      "observed_std_inferred_from_rmse_nse_mm_h": 7.159973504842323e-05
+    },
+    {
+      "basin_id": "369",
+      "n": 1248,
+      "rmse": 0.0009833516349866892,
+      "mae": 0.0007502364926596947,
+      "bias": 0.00022995324123706805,
+      "nse": -1985.0468645938104,
+      "kge2009": -42.01273838271097,
+      "r": 0.38152646668501045,
+      "alpha": 43.70111976193054,
+      "beta": 6.131035445735207,
+      "negative_prediction_fraction": 0.4014423076923077,
+      "observed_std_inferred_from_rmse_nse_mm_h": 2.2065516519428838e-05
+    },
+    {
+      "basin_id": "378",
+      "n": 768,
+      "rmse": 0.005823403531669724,
+      "mae": 0.003841918611217632,
+      "bias": 0.0026527378559294545,
+      "nse": -821.5072749276693,
+      "kge2009": -33.428640377116686,
+      "r": 0.30799542723117923,
+      "alpha": 25.821232679786164,
+      "beta": 24.848664871309083,
+      "negative_prediction_fraction": 0.2981770833333333,
+      "observed_std_inferred_from_rmse_nse_mm_h": 0.0002030518784591752
+    },
+    {
+      "basin_id": "188",
+      "n": 1728,
+      "rmse": 0.0008001015668997045,
+      "mae": 0.0006418458018394867,
+      "bias": -0.00010086107291943328,
+      "nse": -258.7418734676985,
+      "kge2009": -14.84490731811552,
+      "r": 0.10895479189629233,
+      "alpha": 16.065963670431337,
+      "beta": -3.8253357435549815,
+      "negative_prediction_fraction": 0.5393518518518519,
+      "observed_std_inferred_from_rmse_nse_mm_h": 4.9644842426600295e-05
+    }
+  ],
+  "negative_prediction_count_inferred": 28350,
+  "evaluation_scope": "Validation, selección con el mismo split. Pares ventana/horizonte; no serie cronológica reconstruida. Una semilla. No son métricas de test.",
+  "interpretation": "El NSE global no representa por sí solo el desempeño de cada cuenca. 70 cuencas tienen NSE negativo; extremos de cuencas con baja variabilidad influyen fuertemente en la media macro. La mediana complementa, no sustituye, la media negativa. Pendiente comparación con persistencia y DMEL.",
+  "raw_predictions_available_locally": false,
+  "model_checkpoints_downloaded": false,
+  "consistency_checks": "Estado/global coinciden; 48 horizontes y 508 cuencas cubren 870816 pares. RMSE agregado por SSE, MAE, sesgo y fracción negativa coinciden entre niveles; medias macro y mejor época contrastadas."
+}

@@ -1,0 +1,75 @@
+{
+  "evidence_source": "Fragmento de log compartido por el usuario el 02/10/2026; sin SSH directo",
+  "job_id": 53987,
+  "output": "runs/lstm-seed42-fd-fix",
+  "model": "lstm",
+  "resume_confirmed": true,
+  "start_epoch": 3,
+  "epoch_number_one_based": 4,
+  "epochs_already_checkpointed_inferred_from_resume": 3,
+  "n_train": 254000,
+  "n_validation": 18142,
+  "batches_total": 7938,
+  "progress": [
+    {
+      "batches_done": 500,
+      "seconds": 1002.135
+    },
+    {
+      "batches_done": 1000,
+      "seconds": 1251.864
+    },
+    {
+      "batches_done": 1500,
+      "seconds": 1717.165
+    },
+    {
+      "batches_done": 2000,
+      "seconds": 3006.042
+    },
+    {
+      "batches_done": 2500,
+      "seconds": 3634.196
+    },
+    {
+      "batches_done": 3000,
+      "seconds": 4185.739
+    },
+    {
+      "batches_done": 3500,
+      "seconds": 5021.391
+    },
+    {
+      "batches_done": 4000,
+      "seconds": 5486.919
+    },
+    {
+      "batches_done": 4500,
+      "seconds": 6039.199
+    },
+    {
+      "batches_done": 5000,
+      "seconds": 6522.273
+    },
+    {
+      "batches_done": 5500,
+      "seconds": 6985.332
+    },
+    {
+      "batches_done": 6000,
+      "seconds": 7459.92
+    },
+    {
+      "batches_done": 6500,
+      "seconds": 7797.362
+    }
+  ],
+  "training_fraction_done": 0.8188460569412951,
+  "remaining_training_batches": 1438,
+  "recent_1500_batches_seconds": 1275.089,
+  "estimated_remaining_training_seconds_at_recent_1500_batch_rate": 1222.3853213333332,
+  "estimate_excludes_validation_initialization_and_queue": true,
+  "slowdown_cause_confirmed": false,
+  "latest_validation_metrics_received": false,
+  "current_cycle_node_not_in_shared_tail": true
+}

@@ -1,0 +1,15 @@
+{
+  "evidence_source": "Salida squeue --me copiada por el usuario el 03/10/2026; sin SSH directo",
+  "job_id": 54181,
+  "model": "dmel",
+  "partition": "gpu",
+  "displayed_job_name": "lab2_dme",
+  "state": "PENDING",
+  "reason": "Resources",
+  "elapsed": "0:00",
+  "requested_nodes": 1,
+  "training_start_confirmed": false,
+  "effective_resource_request_verified": false,
+  "expected_output_from_submission_helper": "runs/dmel-seed42",
+  "expected_log_from_submission_helper": "/home/max.ramirez/dmel/logs/lab2_dmel_54181.out"
+}

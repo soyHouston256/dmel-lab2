@@ -1,0 +1,26 @@
+{
+  "output": "runs/dmel-seed42/validation",
+  "global": {
+    "n": 870816,
+    "rmse": 0.10566611512631793,
+    "mae": 0.022268063463806734,
+    "bias": 0.000721519794260755,
+    "nse": 0.6208033608446817,
+    "kge2009": 0.7188083986964771,
+    "r": 0.7883767781360117,
+    "alpha": 0.8151518255643099,
+    "beta": 1.0107462095334716,
+    "negative_prediction_fraction": 0.010839258810127513
+  },
+  "n": 18142,
+  "source_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "split": "validation",
+  "units": "mm/h",
+  "clipping": false,
+  "persistence": false,
+  "diagnostic_subset": false,
+  "complete": true,
+  "epochs_completed": 20,
+  "epochs_target": 100,
+  "stop_reason": "early_stopping"
+}

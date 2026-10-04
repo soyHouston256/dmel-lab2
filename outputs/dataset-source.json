@@ -1,0 +1,26 @@
+{
+  "checked_date": "2026-09-26",
+  "source": "Carpeta enlazada en Laboratorio 2.pdf, listada con Google Drive",
+  "folder_url": "https://drive.google.com/drive/folders/1crKbJBhLHQEVJGG-agOxMnKLDnBP2x4w",
+  "train": {
+    "id": "1Ou6LEqX0eflNhf0AA_qp-lXd0SPlm6GG",
+    "url": "https://drive.google.com/file/d/1Ou6LEqX0eflNhf0AA_qp-lXd0SPlm6GG/view?usp=drivesdk",
+    "name": "train.h5",
+    "mime_type": "application/octet-stream",
+    "size_bytes": 5076559230,
+    "local_path": "dataset/train.h5",
+    "downloaded": false,
+    "download_attempt": "Google Drive fetch(download_raw_file=true,include_base64=false)",
+    "download_error": "HTTP 413: file exceeds 268435456-byte connector limit",
+    "sha256": null,
+    "remote_validation": {
+      "evidence": "Log del job 53142 compartido por el usuario; no inspección directa por SSH",
+      "path": "/home/max.ramirez/dmel/dataset/train.h5",
+      "n": 272142,
+      "supervised": true,
+      "sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078"
+    }
+  },
+  "other_files_listed": ["test.h5", "test_targets.csv", "metadata.json", "leer_datos.py"],
+  "test_targets_role": "No aclarado; no utilizar para entrenamiento ni selección"
+}

@@ -1,0 +1,150 @@
+{
+  "evidence_source": "Contenido de history.json copiado por el usuario en la conversación el 2026-10-03; sin acceso SSH ni verificación directa del archivo remoto.",
+  "observed_date": "2026-10-03",
+  "timezone": "America/Lima",
+  "job_id": 53987,
+  "model": "lstm",
+  "remote_history_path": "/home/max.ramirez/dmel/runs/lstm-seed42-fd-fix/history.json",
+  "history": [
+    {
+      "epoch": 0,
+      "train_mse_normalized": 0.45434031145421305,
+      "val_rmse_mm_h": 0.10770595145036646,
+      "seconds": 525.9833223489113,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 1,
+      "train_mse_normalized": 0.4086203715948784,
+      "val_rmse_mm_h": 0.10648975967701492,
+      "seconds": 1850.5151243081782,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 2,
+      "train_mse_normalized": 0.3977067604466657,
+      "val_rmse_mm_h": 0.10449197381170296,
+      "seconds": 6247.412564224796,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 3,
+      "train_mse_normalized": 0.3904987350798938,
+      "val_rmse_mm_h": 0.10389842433922179,
+      "seconds": 9899.15115265688,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 4,
+      "train_mse_normalized": 0.38592283556303814,
+      "val_rmse_mm_h": 0.10313910723381893,
+      "seconds": 3375.6531624149065,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 5,
+      "train_mse_normalized": 0.380322373802077,
+      "val_rmse_mm_h": 0.10316814134663829,
+      "seconds": 7396.924667118117,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 6,
+      "train_mse_normalized": 0.3777067817474796,
+      "val_rmse_mm_h": 0.10260506418482557,
+      "seconds": 7655.668353629997,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 7,
+      "train_mse_normalized": 0.3724129810326799,
+      "val_rmse_mm_h": 0.10236784814178233,
+      "seconds": 353.76208473788574,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 8,
+      "train_mse_normalized": 0.37019430885945015,
+      "val_rmse_mm_h": 0.10296337383416995,
+      "seconds": 346.4061487398576,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 9,
+      "train_mse_normalized": 0.3651318728644034,
+      "val_rmse_mm_h": 0.10228306200404642,
+      "seconds": 384.1008824291639,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 10,
+      "train_mse_normalized": 0.3609924156159221,
+      "val_rmse_mm_h": 0.10273170677860137,
+      "seconds": 352.1791465699207,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 11,
+      "train_mse_normalized": 0.35780916947220254,
+      "val_rmse_mm_h": 0.10312324732811454,
+      "seconds": 358.2884388570674,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 12,
+      "train_mse_normalized": 0.3545382808146954,
+      "val_rmse_mm_h": 0.10286412329614358,
+      "seconds": 573.7725676619448,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 13,
+      "train_mse_normalized": 0.34857483961362773,
+      "val_rmse_mm_h": 0.10234218292581239,
+      "seconds": 347.33840947505087,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 14,
+      "train_mse_normalized": 0.3444824214863818,
+      "val_rmse_mm_h": 0.10243263247876022,
+      "seconds": 340.0793871220667,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 15,
+      "train_mse_normalized": 0.340133316792313,
+      "val_rmse_mm_h": 0.10347099186688097,
+      "seconds": 356.1142263591755,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 16,
+      "train_mse_normalized": 0.3362670535590265,
+      "val_rmse_mm_h": 0.10478924711380612,
+      "seconds": 422.7478712159209,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 17,
+      "train_mse_normalized": 0.3304385486040411,
+      "val_rmse_mm_h": 0.10458827323200509,
+      "seconds": 478.6144521259703,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 18,
+      "train_mse_normalized": 0.32518917177246487,
+      "val_rmse_mm_h": 0.10536120006266432,
+      "seconds": 479.8386490889825,
+      "peak_cuda_mib": 235.9443359375
+    },
+    {
+      "epoch": 19,
+      "train_mse_normalized": 0.321572272522331,
+      "val_rmse_mm_h": 0.1066446566583386,
+      "seconds": 518.8299693600275,
+      "peak_cuda_mib": 235.9443359375
+    }
+  ]
+}

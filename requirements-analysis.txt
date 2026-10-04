@@ -1,0 +1,3 @@
+# Complemento opcional para scripts/plot_lstm_history.py.
+# Instalar después de requirements.txt o requirements-khipu.txt.
+matplotlib==3.8.4

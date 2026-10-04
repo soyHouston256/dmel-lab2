@@ -1,0 +1,116 @@
+{
+  "status": "research_specification_not_executable_config",
+  "source": {
+    "doi": "10.1016/j.asoc.2026.114792",
+    "review_date": "2026-09-26",
+    "pdf_sha256": "358b140f1edf02bf2ceca313343520d0871517d1579f33595aa093aea7fc5a78"
+  },
+  "published": {
+    "data": {
+      "main_stations": ["Shuangpai", "Fenghuang"],
+      "main_years": [2002, 2005],
+      "frequency": "daily",
+      "split_ratios": {"train": 0.7, "validation": 0.15, "test": 0.15},
+      "source_pages": [5]
+    },
+    "training": {
+      "input_length": 7,
+      "output_lengths": [1, 3, 5, 7],
+      "epochs": 100,
+      "optimizer": "Adam",
+      "initial_learning_rate": 0.0001,
+      "loss": "MSE",
+      "batch_size": 32,
+      "independent_runs": 10,
+      "source_pages": [5, 8]
+    },
+    "ceemdan": {
+      "noise_standard_deviation_reported": 0.2,
+      "noise_realizations": 100,
+      "component_count_observed_main_stations": 9,
+      "component_count_is_not_a_universal_setting": true,
+      "source_pages": [7]
+    },
+    "sample_entropy": {
+      "embedding_dimension": 2,
+      "tolerance_factor": 0.2,
+      "tolerance_reference": "standard_deviation_of_each_IMF",
+      "source_pages": [3, 7]
+    },
+    "explicit_groups_one_based": {
+      "Shuangpai": {
+        "high": [[1], [2], [3], [4], [5]],
+        "low": [[6, 7, 8, 9]],
+        "original_entropy": 0.1769
+      },
+      "Fenghuang": {
+        "high": [[1], [2], [3, 4, 5]],
+        "low": [[6, 7, 8, 9]],
+        "original_entropy": 0.4523
+      },
+      "source_pages": [9, 10],
+      "scope": "reported_original_data_decompositions_only"
+    },
+    "informer": {
+      "d_model": 256,
+      "n_heads": 8,
+      "encoder_layers": 2,
+      "decoder_layers": 1,
+      "feedforward_dim": 1024,
+      "activation": "GELU",
+      "source_table": "1, page 8"
+    },
+    "lstm": {"hidden_size": 256, "num_layers": 2, "source_table": "1, page 8"},
+    "other_baselines": {
+      "transformer": {"d_model": 256, "n_heads": 8, "encoder_layers": 2, "decoder_layers": 1, "feedforward_dim": 1024, "activation": "GELU"},
+      "rnn": {"hidden_size": 256, "num_layers": 2, "activation": "Tanh"},
+      "timesnet": {"d_model": 256, "encoder_layers": 2, "feedforward_dim": 1024, "activation": "GELU", "num_kernels": 6, "top_k": 5},
+      "patchtst": {"d_model": 256, "n_heads": 8, "encoder_layers": 2, "feedforward_dim": 1024, "activation": "GELU", "patch_len": 3},
+      "source_table": "1, page 8"
+    },
+    "univariate_aggregation": "additive_superposition",
+    "metrics": ["RMSE", "NSE", "KGE", "EP_for_monthly_peaks"]
+  },
+  "unresolved": {
+    "original_data_paths": null,
+    "exact_station_ids": null,
+    "supplement_contents": null,
+    "split_dates": null,
+    "decomposition_split_order": null,
+    "decomposition_history_length": null,
+    "ceemdan_backend_and_version": null,
+    "ceemdan_noise_parameter_mapping": null,
+    "emd_stopping_and_boundary_settings": null,
+    "residual_in_ninth_component": null,
+    "sample_entropy_counting_conventions": null,
+    "mrs_similarity_algorithm": null,
+    "mrs_similarity_tolerance": null,
+    "model_per_component_or_per_branch": null,
+    "informer_label_len": null,
+    "informer_factor": null,
+    "dropout": null,
+    "temporal_embeddings": null,
+    "lstm_output_head": null,
+    "normalization": null,
+    "scheduler_and_checkpoint_policy": null,
+    "seeds": null,
+    "patchtst_stride_and_padding": null,
+    "timesnet_short_window_adaptation": null,
+    "metric_horizon_aggregation": null,
+    "actual_kge_implementation": null,
+    "multivariate_final_reduction_after_cat": null,
+    "hardware_and_timing_scope": null
+  },
+  "proposed_requirements_not_claimed_as_paper_settings": {
+    "chronological_split_before_any_fit": true,
+    "inputs_use_data_no_later_than_forecast_origin": true,
+    "scalers_fit_training_only": true,
+    "residual_accounted_for": true,
+    "reconstruction_invariant": true,
+    "metrics_in_original_units": true,
+    "kge_variant": "2009_std_prediction_over_std_observation_mean_prediction_over_mean_observation",
+    "metrics_per_lead_and_seed": true,
+    "export_predictions_with_origin_and_target_dates": true,
+    "no_full_series_decomposition_as_operational_forecast": true
+  }
+}

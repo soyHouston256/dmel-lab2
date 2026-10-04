@@ -1,0 +1,460 @@
+{
+  "purpose": "costo e integridad de historia; sin objetivos ni selección de modelo",
+  "environment": {
+    "python": "3.12.12",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "torch": "2.7.1",
+    "numpy": "1.26.4",
+    "scipy": "1.16.3",
+    "h5py": "3.15.1",
+    "cuda_build": null,
+    "cuda_available": false,
+    "gpu": null
+  },
+  "data_sha256": "2a8f641e01ecd71a37033868e111e733bdd0119909e07d0387b7be8a62a85580",
+  "config": {
+    "trials": 100,
+    "noise_scale": 0.2,
+    "seed": 42,
+    "max_imfs": 8,
+    "max_siftings": 50,
+    "sift_tolerance": 0.05,
+    "entropy_m": 2,
+    "entropy_r": 0.2
+  },
+  "samples": [
+    {
+      "Id": 0,
+      "seconds": 0.8947074170000633,
+      "max_abs_reconstruction_error": 1.1920928955078125e-07,
+      "diagnostics": {
+        "algorithm": "own-ceemdan-torres2011-fixed-stage-snr-v1",
+        "routing": "sampen-imf-strictly-greater-than-window;residual-low;infinity-ties-low",
+        "n_samples": 336,
+        "n_imfs": 7,
+        "seed": 42,
+        "sample_id": 0,
+        "entropy_original": 0.02969119278730941,
+        "entropy_imfs": [
+          2.0956643771867234,
+          2.1528308648626355,
+          1.9824995964876053,
+          0.20634880374461134,
+          0.042259496917711185,
+          0.09612756528260415,
+          0.036522622861615124
+        ],
+        "entropy_status": {
+          "original": "finite",
+          "imfs": [
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite"
+          ]
+        },
+        "entropy_details": {
+          "original": {
+            "value": 0.02969119278730941,
+            "status": "finite",
+            "matches_m_plus_1": 17819,
+            "matches_m": 18356
+          },
+          "imfs": [
+            {
+              "value": 2.0956643771867234,
+              "status": "finite",
+              "matches_m_plus_1": 107,
+              "matches_m": 870
+            },
+            {
+              "value": 2.1528308648626355,
+              "status": "finite",
+              "matches_m_plus_1": 87,
+              "matches_m": 749
+            },
+            {
+              "value": 1.9824995964876053,
+              "status": "finite",
+              "matches_m_plus_1": 115,
+              "matches_m": 835
+            },
+            {
+              "value": 0.20634880374461134,
+              "status": "finite",
+              "matches_m_plus_1": 15071,
+              "matches_m": 18525
+            },
+            {
+              "value": 0.042259496917711185,
+              "status": "finite",
+              "matches_m_plus_1": 22078,
+              "matches_m": 23031
+            },
+            {
+              "value": 0.09612756528260415,
+              "status": "finite",
+              "matches_m_plus_1": 7671,
+              "matches_m": 8445
+            },
+            {
+              "value": 0.036522622861615124,
+              "status": "finite",
+              "matches_m_plus_1": 8065,
+              "matches_m": 8365
+            }
+          ]
+        },
+        "assignments": [
+          "high",
+          "high",
+          "high",
+          "high",
+          "high",
+          "high",
+          "high"
+        ],
+        "residual_channel": "low",
+        "residual_std": 0.08667221921477067,
+        "reconstruction_error": 1.1920928955078125e-07,
+        "relative_reconstruction_error": 4.24732478001406e-08,
+        "config": {
+          "trials": 100,
+          "noise_scale": 0.2,
+          "seed": 42,
+          "max_imfs": 8,
+          "max_siftings": 50,
+          "sift_tolerance": 0.05,
+          "entropy_m": 2,
+          "entropy_r": 0.2
+        }
+      }
+    },
+    {
+      "Id": 1,
+      "seconds": 0.7487839580007858,
+      "max_abs_reconstruction_error": 1.862645149230957e-09,
+      "diagnostics": {
+        "algorithm": "own-ceemdan-torres2011-fixed-stage-snr-v1",
+        "routing": "sampen-imf-strictly-greater-than-window;residual-low;infinity-ties-low",
+        "n_samples": 336,
+        "n_imfs": 6,
+        "seed": 42,
+        "sample_id": 1,
+        "entropy_original": 0.0995999306299452,
+        "entropy_imfs": [
+          1.8141408714241898,
+          1.9708802354030723,
+          2.186051276738094,
+          1.0058858328490639,
+          0.3971465812330736,
+          0.23513405148084326
+        ],
+        "entropy_status": {
+          "original": "finite",
+          "imfs": [
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite"
+          ]
+        },
+        "entropy_details": {
+          "original": {
+            "value": 0.0995999306299452,
+            "status": "finite",
+            "matches_m_plus_1": 7782,
+            "matches_m": 8597
+          },
+          "imfs": [
+            {
+              "value": 1.8141408714241898,
+              "status": "finite",
+              "matches_m_plus_1": 162,
+              "matches_m": 994
+            },
+            {
+              "value": 1.9708802354030723,
+              "status": "finite",
+              "matches_m_plus_1": 113,
+              "matches_m": 811
+            },
+            {
+              "value": 2.186051276738094,
+              "status": "finite",
+              "matches_m_plus_1": 80,
+              "matches_m": 712
+            },
+            {
+              "value": 1.0058858328490639,
+              "status": "finite",
+              "matches_m_plus_1": 670,
+              "matches_m": 1832
+            },
+            {
+              "value": 0.3971465812330736,
+              "status": "finite",
+              "matches_m_plus_1": 4225,
+              "matches_m": 6285
+            },
+            {
+              "value": 0.23513405148084326,
+              "status": "finite",
+              "matches_m_plus_1": 4659,
+              "matches_m": 5894
+            }
+          ]
+        },
+        "assignments": [
+          "high",
+          "high",
+          "high",
+          "high",
+          "high",
+          "high"
+        ],
+        "residual_channel": "low",
+        "residual_std": 0.003969389291000408,
+        "reconstruction_error": 9.313225746154785e-10,
+        "relative_reconstruction_error": 9.313225746154785e-10,
+        "config": {
+          "trials": 100,
+          "noise_scale": 0.2,
+          "seed": 42,
+          "max_imfs": 8,
+          "max_siftings": 50,
+          "sift_tolerance": 0.05,
+          "entropy_m": 2,
+          "entropy_r": 0.2
+        }
+      }
+    },
+    {
+      "Id": 100,
+      "seconds": 1.0246863749998738,
+      "max_abs_reconstruction_error": 7.450580596923828e-09,
+      "diagnostics": {
+        "algorithm": "own-ceemdan-torres2011-fixed-stage-snr-v1",
+        "routing": "sampen-imf-strictly-greater-than-window;residual-low;infinity-ties-low",
+        "n_samples": 336,
+        "n_imfs": 7,
+        "seed": 42,
+        "sample_id": 100,
+        "entropy_original": 0.008083777810654325,
+        "entropy_imfs": [
+          1.8321930388065455,
+          1.939204340188122,
+          1.9733592648936,
+          0.32877514215310005,
+          0.03269984671590052,
+          0.04656096148401315,
+          0.07483871736053443
+        ],
+        "entropy_status": {
+          "original": "finite",
+          "imfs": [
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite"
+          ]
+        },
+        "entropy_details": {
+          "original": {
+            "value": 0.008083777810654325,
+            "status": "finite",
+            "matches_m_plus_1": 37824,
+            "matches_m": 38131
+          },
+          "imfs": [
+            {
+              "value": 1.8321930388065455,
+              "status": "finite",
+              "matches_m_plus_1": 206,
+              "matches_m": 1287
+            },
+            {
+              "value": 1.939204340188122,
+              "status": "finite",
+              "matches_m_plus_1": 171,
+              "matches_m": 1189
+            },
+            {
+              "value": 1.9733592648936,
+              "status": "finite",
+              "matches_m_plus_1": 154,
+              "matches_m": 1108
+            },
+            {
+              "value": 0.32877514215310005,
+              "status": "finite",
+              "matches_m_plus_1": 10918,
+              "matches_m": 15168
+            },
+            {
+              "value": 0.03269984671590052,
+              "status": "finite",
+              "matches_m_plus_1": 26173,
+              "matches_m": 27043
+            },
+            {
+              "value": 0.04656096148401315,
+              "status": "finite",
+              "matches_m_plus_1": 12211,
+              "matches_m": 12793
+            },
+            {
+              "value": 0.07483871736053443,
+              "status": "finite",
+              "matches_m_plus_1": 5765,
+              "matches_m": 6213
+            }
+          ]
+        },
+        "assignments": [
+          "high",
+          "high",
+          "high",
+          "high",
+          "high",
+          "high",
+          "high"
+        ],
+        "residual_channel": "low",
+        "residual_std": 0.012655839388151426,
+        "reconstruction_error": 3.725290298461914e-09,
+        "relative_reconstruction_error": 3.725290298461914e-09,
+        "config": {
+          "trials": 100,
+          "noise_scale": 0.2,
+          "seed": 42,
+          "max_imfs": 8,
+          "max_siftings": 50,
+          "sift_tolerance": 0.05,
+          "entropy_m": 2,
+          "entropy_r": 0.2
+        }
+      }
+    },
+    {
+      "Id": 500,
+      "seconds": 0.8776625000000422,
+      "max_abs_reconstruction_error": 1.862645149230957e-09,
+      "diagnostics": {
+        "algorithm": "own-ceemdan-torres2011-fixed-stage-snr-v1",
+        "routing": "sampen-imf-strictly-greater-than-window;residual-low;infinity-ties-low",
+        "n_samples": 336,
+        "n_imfs": 7,
+        "seed": 42,
+        "sample_id": 500,
+        "entropy_original": 0.3013416811803645,
+        "entropy_imfs": [
+          1.7105960621208485,
+          1.7935993961500623,
+          1.7681177061710145,
+          0.5694865406530359,
+          0.16247348941052217,
+          0.10495180187439533,
+          0.06764739519629766
+        ],
+        "entropy_status": {
+          "original": "finite",
+          "imfs": [
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite",
+            "finite"
+          ]
+        },
+        "entropy_details": {
+          "original": {
+            "value": 0.3013416811803645,
+            "status": "finite",
+            "matches_m_plus_1": 3381,
+            "matches_m": 4570
+          },
+          "imfs": [
+            {
+              "value": 1.7105960621208485,
+              "status": "finite",
+              "matches_m_plus_1": 186,
+              "matches_m": 1029
+            },
+            {
+              "value": 1.7935993961500623,
+              "status": "finite",
+              "matches_m_plus_1": 181,
+              "matches_m": 1088
+            },
+            {
+              "value": 1.7681177061710145,
+              "status": "finite",
+              "matches_m_plus_1": 214,
+              "matches_m": 1254
+            },
+            {
+              "value": 0.5694865406530359,
+              "status": "finite",
+              "matches_m_plus_1": 1973,
+              "matches_m": 3487
+            },
+            {
+              "value": 0.16247348941052217,
+              "status": "finite",
+              "matches_m_plus_1": 8803,
+              "matches_m": 10356
+            },
+            {
+              "value": 0.10495180187439533,
+              "status": "finite",
+              "matches_m_plus_1": 6118,
+              "matches_m": 6795
+            },
+            {
+              "value": 0.06764739519629766,
+              "status": "finite",
+              "matches_m_plus_1": 6644,
+              "matches_m": 7109
+            }
+          ]
+        },
+        "assignments": [
+          "high",
+          "high",
+          "high",
+          "high",
+          "low",
+          "low",
+          "low"
+        ],
+        "residual_channel": "low",
+        "residual_std": 0.0003654502929039248,
+        "reconstruction_error": 9.313225746154785e-10,
+        "relative_reconstruction_error": 9.313225746154785e-10,
+        "config": {
+          "trials": 100,
+          "noise_scale": 0.2,
+          "seed": 42,
+          "max_imfs": 8,
+          "max_siftings": 50,
+          "sift_tolerance": 0.05,
+          "entropy_m": 2,
+          "entropy_r": 0.2
+        }
+      }
+    }
+  ],
+  "median_seconds_per_window": 0.8861849585000527,
+  "extrapolation_warning": "4 ventanas locales no predicen tiempos de cola ni rendimiento de Khipu"
+}

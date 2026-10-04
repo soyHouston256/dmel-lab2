@@ -1,0 +1,100 @@
+# Entornos y dependencias instaladas. Conservar requirements*.txt.
+.venv/
+.venv-*/
+venv/
+env/
+.conda/
+node_modules/
+
+# Archivos generados por Python, pruebas y empaquetado.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+*.egg-info/
+.eggs/
+/build/
+/dist/
+
+# Datos binarios, tensores y pesos. Conservar dataset/metadata.json y el lector.
+*.h5
+*.hdf5
+*.hdf
+*.npy
+*.npz
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.onnx
+*.pkl
+*.pickle
+*.joblib
+/dataset/**/*.csv
+/dataset/**/*.parquet
+/dataset/**/*.zip
+/dataset/**/*.tar
+/dataset/**/*.tar.gz
+/dataset/**/*.tgz
+/dataset/**/*.gz
+/dataset/**/*.7z
+/dataset/**/*.rar
+
+# Ejecuciones completas, cache, logs y respaldos descargados de Khipu.
+/cache/
+/runs/
+/logs/
+/migration/
+.rsync-partial/
+*.log
+slurm-*.out
+/outputs/**/predictions.csv
+
+# Archivos de trabajo y exportación. Conservar outputs/presentacion/*.pptx.
+/tmp/
+/.presentation-build/
+/.chart-data-*/
+/.codex-finalizer/
+*.tmp
+*.temp
+*.partial
+*.swp
+*.swo
+*~
+~$*
+
+# Configuración privada y credenciales. Las plantillas de ejemplo sí se incluyen.
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+.ssh/
+.netrc
+.pypirc
+id_rsa
+id_ed25519
+
+# Preferencias locales de editores y archivos del sistema operativo.
+.idea/
+.vscode/
+.DS_Store
+._*
+Thumbs.db
+Desktop.ini
+
+# Referencias originales y texto extraído. Conservar nuestros informes y figuras.
+/DMEL_ A novel dual-modal ensemble learning architecture for multi-step runoff prediction.pdf
+/Laboratorio 2.pdf
+/outputs/sources/
+
+# No excluir outputs/ entero: contiene métricas, evidencia, informes, PPT y guiones.

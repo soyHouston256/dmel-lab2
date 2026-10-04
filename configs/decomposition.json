@@ -1,0 +1,1 @@
+{"trials": 100, "noise_scale": 0.2, "seed": 42, "max_imfs": 8, "max_siftings": 50, "sift_tolerance": 0.05, "entropy_m": 2, "entropy_r": 0.2}

@@ -1,0 +1,248 @@
+DMEL · Laboratorio 2 · Versión 03/10/2026
+
+Distribución orientativa: metodología (1–7), 6 minutos; implementación (8–14), 6 minutos; resultados disponibles (15–20), 6 minutos. Referencias (21–22), apoyo. Ajustar el ritmo con un ensayo. Incluye la comparación LSTM–DMEL. Persistencia, ablación y evaluación final de test siguen pendientes.
+
+DIAPOSITIVA 1: DMEL: pronóstico de caudal con dos ramas de aprendizaje
+Metodología · 15 s
+
+Presentamos una adaptación de DMEL para pronosticar las siguientes 48 horas de caudal específico a partir de 14 días de historia. Explicaremos el método, su aplicación al laboratorio y la comparación entre LSTM y DMEL en validación.
+
+FUENTES
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto.
+Laboratorio 2.pdf, documento proporcionado por el usuario, pp. 1–3. Video: metodología 6 min, implementación 6 min, resultados 6 min. Se permiten simplificaciones justificadas, conservando la propuesta central.
+
+========================================
+
+DIAPOSITIVA 2: El problema que aborda DMEL
+Metodología · 45 s
+
+El problema es anticipar varios valores futuros de caudal. Una serie hidrológica combina episodios abruptos con una evolución más suave. El paper estudia principalmente dos estaciones chinas con datos diarios entre 2002 y 2005. La historia de entrada tiene siete días y los horizontes de evaluación son uno, tres, cinco y siete días. El mapa identifica una cuenca original y no representa nuestro dataset, cuyas cuencas son anónimas. Los resultados de ese contexto motivan la adaptación, pero no acreditan por sí mismos un buen pronóstico horario.
+
+FUENTES
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto. Páginas 5 y 7, figura 5.
+dataset/metadata.json; Laboratorio 2.pdf, pp. 1–2; outputs/revision-dataset-lab2.json. Datos oficiales enlazados por el laboratorio: https://drive.google.com/drive/folders/1crKbJBhLHQEVJGG-agOxMnKLDnBP2x4w . train.h5 está disponible en Khipu. No se utilizó test_targets.csv.
+
+========================================
+
+DIAPOSITIVA 3: La propuesta central de DMEL
+Metodología · 60 s
+
+La propuesta central combina una representación descompuesta con dos familias de redes. CEEMDAN extrae componentes de la señal. MRS calcula su entropía muestral y reúne componentes de complejidad parecida en señales reconstruidas o RIMFs. Después compara su entropía con la del caudal original para asignarlas a Informer o LSTM. Finalmente suma las predicciones. El término dual-modal se refiere aquí a grupos de componentes de la serie. La especialización de las redes es una hipótesis que debemos contrastar con una ablación. La figura es un detalle del esquema publicado, no un diagrama de nuestro código.
+
+FUENTES
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto. Páginas 5–6, figura 3.
+
+========================================
+
+DIAPOSITIVA 4: CEEMDAN: descomposición de la señal
+Metodología · 60 s
+
+Una IMF es un componente oscilatorio que EMD obtiene usando los extremos locales y sus envolventes. CEEMDAN repite extracciones con perturbaciones de ruido y combina los resultados por etapas. La identidad de reconstrucción es esencial: el caudal debe ser igual a la suma de los modos más el residuo, salvo error numérico. El artículo usa cien realizaciones y un nivel de ruido de 0.2. El backend y algunas reglas de parada no quedan totalmente especificados. Nuestra implementación documenta bordes, escalado del ruido y criterio de parada. El número de modos depende de la ventana, de modo que no fijamos los nueve modos observados en las estaciones del artículo.
+
+FUENTES
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto. Páginas 3 y 7.
+Torres et al. (2011). A complete ensemble empirical mode decomposition with adaptive noise. ICASSP. https://perso.ens-lyon.fr/patrick.flandrin/0004144.pdf . Véanse también docs/decomposition.md y dmel/decomposition.py.
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+
+========================================
+
+DIAPOSITIVA 5: Entropía muestral y reconocimiento modal
+Metodología · 50 s
+
+La entropía muestral evalúa cuánto persiste la semejanza entre patrones al extenderlos un paso. B cuenta los pares parecidos de longitud m y A los que siguen parecidos con longitud m más uno. Cuando esa proporción es pequeña, la entropía es mayor y la señal resulta menos regular según esta medida. El paper usa m igual a dos y una tolerancia de 0.2 veces la desviación estándar de la señal evaluada. MRS reúne componentes con entropías parecidas y vuelve a evaluar las señales reconstruidas. Entropía no equivale directamente a frecuencia física: alta y baja son etiquetas operativas. La regla general de similitud entre IMFs no queda suficientemente detallada para reproducirla sin decisiones adicionales.
+
+FUENTES
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto. Páginas 3, 5 y 7.
+Richman y Moorman (2000). Physiological time-series analysis using approximate entropy and sample entropy. https://doi.org/10.1152/ajpheart.2000.278.6.H2039 . Recurso de contraste: https://physionet.org/content/sampen/1.0.0/ .
+
+========================================
+
+DIAPOSITIVA 6: Informer para componentes más irregulares
+Metodología · 70 s
+
+Informer usa atención para relacionar posiciones de la historia. ProbSparse selecciona consultas relevantes usando una medida de dispersión de sus puntuaciones de atención. La reducción temporal del encoder disminuye la longitud de sus representaciones. El decoder produce la secuencia futura de una vez, evitando alimentar cada predicción como entrada del paso siguiente. El trabajo original de Informer describe el beneficio para secuencias largas. Nuestra implementación conserva estos mecanismos principales, pero adapta embeddings y otros detalles. El decoder recibe un prefijo conocido y ceros para las posiciones futuras. No recibe los caudales ni las variables meteorológicas observadas del futuro.
+
+FUENTES
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto. Página 4, figura 1.
+Zhou et al. (2021). Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting. https://arxiv.org/abs/2012.07436 .
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+
+========================================
+
+DIAPOSITIVA 7: LSTM y suma de las dos ramas
+Metodología · 60 s
+
+La LSTM mantiene un estado de memoria. La compuerta de olvido controla qué parte conserva, la de entrada qué información incorpora y la de salida qué parte comunica al estado oculto. DMEL asigna esta red a los componentes de menor complejidad y suma su predicción con la rama Informer. En nuestra adaptación, una cabeza lineal obtiene directamente los 48 pasos a partir de la LSTM. El entrenamiento minimiza el error del caudal total, así que las contribuciones pronosticadas por cada rama no tienen una interpretación física identificable por separado. Esta especialización se evaluará frente a una variante con Informer en ambas ramas.
+
+FUENTES
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto. Páginas 4–5, figura 2 y ecuación 14.
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+
+========================================
+
+DIAPOSITIVA 8: Adaptación del paper al laboratorio
+Implementación · 45 s
+
+Pasamos de un problema diario a uno horario. Cada ejemplo aporta 336 horas y exige 48 valores futuros de caudal específico. La salida se expresa en milímetros por hora, como establece el laboratorio. Usamos las once variables meteorológicas históricas junto al caudal, y respetamos los flags de entrenamiento y validación. No aplicamos otra vez el reparto porcentual del artículo. El laboratorio permite reemplazar componentes si falta información, siempre que lo justifiquemos y conservemos la idea central. Por eso hablaremos de una adaptación, sin afirmar reproducción exacta de las cifras publicadas.
+
+FUENTES
+Laboratorio 2.pdf, documento proporcionado por el usuario, pp. 1–3. Video: metodología 6 min, implementación 6 min, resultados 6 min. Se permiten simplificaciones justificadas, conservando la propuesta central.
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto. Página 5.
+dataset/metadata.json; Laboratorio 2.pdf, pp. 1–2; outputs/revision-dataset-lab2.json. Datos oficiales enlazados por el laboratorio: https://drive.google.com/drive/folders/1crKbJBhLHQEVJGG-agOxMnKLDnBP2x4w . train.h5 está disponible en Khipu. No se utilizó test_targets.csv.
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+
+========================================
+
+DIAPOSITIVA 9: Contrato del dataset Rainfall–Runoff
+Implementación · 45 s
+
+El eje de entrada sigue el orden muestra, tiempo y canal. El caudal está en el canal once, contando desde cero. Los metadatos declaran 254 mil ejemplos de entrenamiento y 18 142 de validación, juntos en train.h5, cuyo total de 272 142 filas verificamos en Khipu. Test contiene 27 983 historias. Hemos comprobado 508 cuencas en validación y en test, pero no debemos convertir sus identificadores anónimos en ubicaciones o calendarios. Las unidades meteorológicas no están especificadas en los metadatos, por lo que conservamos nombres y valores sin inventar conversiones.
+
+FUENTES
+dataset/metadata.json; Laboratorio 2.pdf, pp. 1–2; outputs/revision-dataset-lab2.json. Datos oficiales enlazados por el laboratorio: https://drive.google.com/drive/folders/1crKbJBhLHQEVJGG-agOxMnKLDnBP2x4w . train.h5 está disponible en Khipu. No se utilizó test_targets.csv.
+Resultados propios de validación: LSTM 53987 y DMEL 54181, ambos COMPLETED 0:0. outputs/khipu-lstm-53987-completed/metrics.json y outputs/khipu-dmel-54181-completed/metrics.json, analysis.json, status.json y provenance.json. Historiales: outputs/khipu-lstm-53987-history-20261003.json y outputs/khipu-dmel-54181-completed/history.json. Salidas de Khipu compartidas por el usuario, contrastadas localmente sin SSH. Ambos best.pt corresponden a epoch=9, décima época. Mismo split, semilla 42, 18142 ventanas, 48 horizontes y 508 cuencas. Son métricas de validación utilizada para seleccionar checkpoints, no de test. No se dispone de predicciones individuales localmente.
+
+========================================
+
+DIAPOSITIVA 10: Una ventana real de nuestro dataset
+Implementación · 40 s
+
+Este gráfico usa la primera fila de test.h5, cuenca anónima 222. La selección es simplemente la primera fila, sin elegirla por calidad de una predicción. Mostramos sus 336 caudales históricos y ubicamos el final de la ventana en la hora cero. Los objetivos futuros comienzan en la hora uno y terminan en la 48. El gráfico no contiene una predicción ni objetivos de test. Permite observar un ascenso pronunciado y una recesión dentro del pasado disponible. La forma de esa ventana ayuda a explicar por qué estudiar componentes de distinta regularidad puede ser útil.
+
+FUENTES
+dataset/metadata.json; Laboratorio 2.pdf, pp. 1–2; outputs/revision-dataset-lab2.json. Datos oficiales enlazados por el laboratorio: https://drive.google.com/drive/folders/1crKbJBhLHQEVJGG-agOxMnKLDnBP2x4w . train.h5 está disponible en Khipu. No se utilizó test_targets.csv.
+Lectura directa de dataset/test.h5, X[0,:,11]. Datos exactos y criterio de selección: .presentation-build/dmel/assets/example.json.
+
+========================================
+
+DIAPOSITIVA 11: MRS simplificado: dos componentes
+Implementación · 65 s
+
+Nuestra regla produce siempre dos canales. Sumamos a alta los modos cuya entropía supera a la del caudal de la ventana. El resto de modos y el residuo forman baja. Esta decisión elimina la fusión intermedia del MRS publicado, cuya tolerancia de similitud no queda totalmente definida. En esta ventana todas las siete IMFs extraídas superan el umbral, así que baja contiene el residuo. Esto muestra por qué los nombres alta y baja deben entenderse como complejidad y no como bandas físicas garantizadas. La suma reconstruye la historia con error máximo de aproximadamente 1.19 por diez a la menos siete milímetros por hora. Este ejemplo solo ilustra el preprocesamiento y no mide precisión predictiva.
+
+FUENTES
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+Cálculo local con configs/decomposition.json, 100 realizaciones, semilla 42 y sample_id 0. Entropía original: 0.02969119278730941. Diagnósticos completos: .presentation-build/dmel/assets/example.json.
+
+========================================
+
+DIAPOSITIVA 12: Entradas de las ramas y salida de 48 horas
+Implementación · 65 s
+
+Descomponemos únicamente el caudal histórico. Cada rama recibe su componente y las once variables meteorológicas históricas, manteniendo doce canales por entrada. Informer y LSTM entregan un vector de 48 valores que el modelo suma. Las cabezas corrigen el último valor de su componente, una decisión adicional del laboratorio que también aplicamos a la LSTM base. Normalizamos conservando la identidad aditiva: alta dividida por sigma, baja menos mu dividida por sigma. Después de sumar las salidas, multiplicamos por sigma y añadimos mu una sola vez. Si sumáramos dos normalizaciones centradas y desnormalizáramos sin cuidado, introduciríamos un sesgo.
+
+FUENTES
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+Detalle de la normalización: high/σ + (low−μ)/σ = (q−μ)/σ.
+
+========================================
+
+DIAPOSITIVA 13: Protocolo de entrenamiento
+Implementación · 55 s
+
+Seguimos Adam con tasa uno por diez a la menos cuatro, lotes de 32 y un máximo de cien épocas. Añadimos parada temprana con paciencia de diez y seleccionamos el checkpoint por RMSE de validación en unidades físicas. La normalización solo usa entrenamiento. La descomposición recibe el pasado de cada ventana, nunca caudales futuros. y_aux podría servir como supervisión auxiliar según el enunciado, pero esta versión no lo usa. Tampoco empleamos test_targets.csv para ajustar o seleccionar. En Khipu dividimos el entrenamiento en ciclos de una época, guardando pesos, optimizador y estados aleatorios. LSTM y DMEL completaron veinte épocas cada uno y terminaron por parada temprana. Los ciclos guardaron su estado y permitieron continuar el entrenamiento entre asignaciones.
+
+FUENTES
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+Resultados propios de validación: LSTM 53987 y DMEL 54181, ambos COMPLETED 0:0. outputs/khipu-lstm-53987-completed/metrics.json y outputs/khipu-dmel-54181-completed/metrics.json, analysis.json, status.json y provenance.json. Historiales: outputs/khipu-lstm-53987-history-20261003.json y outputs/khipu-dmel-54181-completed/history.json. Salidas de Khipu compartidas por el usuario, contrastadas localmente sin SSH. Ambos best.pt corresponden a epoch=9, décima época. Mismo split, semilla 42, 18142 ventanas, 48 horizontes y 508 cuencas. Son métricas de validación utilizada para seleccionar checkpoints, no de test. No se dispone de predicciones individuales localmente.
+Laboratorio 2.pdf, documento proporcionado por el usuario, pp. 1–3. Video: metodología 6 min, implementación 6 min, resultados 6 min. Se permiten simplificaciones justificadas, conservando la propuesta central.
+
+========================================
+
+DIAPOSITIVA 14: Comparación de modelos y ablación
+Implementación · 45 s
+
+La persistencia repite el último caudal para todas las horas futuras. La LSTM multivariada recibe la señal original y sirve de modelo base aprendido. Nuestra ablación conserva las dos representaciones y la suma, pero reemplaza la rama LSTM por otra Informer. Con eso estudiamos la especialización de las ramas. La comparación no mantiene igual número de parámetros: la variante de dos Informer tiene más capacidad. Debemos declarar esa diferencia al interpretar resultados. Las redes comparten particiones, semilla, función objetivo y presupuesto. Una sola semilla permite una primera comparación, pero no prueba robustez estadística como la repetición de diez corridas descrita en el paper.
+
+FUENTES
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto. Sección 3.2 y discusión de repeticiones.
+
+========================================
+
+DIAPOSITIVA 15: Evaluación por horizonte y por cuenca
+Resultados disponibles · 45 s
+
+Calculamos RMSE y MAE en milímetros por hora. NSE compara el error cuadrático con la referencia de predecir la media observada del conjunto evaluado; un valor negativo indica que resulta peor que esa referencia. KGE 2009 combina correlación con los cocientes de desviaciones estándar y medias entre predicción y observación. Su cero no tiene el mismo significado de referencia que el cero de NSE. Por eso declaramos explícitamente la versión, además de sus componentes. Reportamos errores por horizonte y cuenca para que un promedio global no oculte fallos. Sin fechas absolutas no podemos reconstruir una cronología de eventos ni auditar todo el solapamiento original. Los casos indefinidos se registran como tales.
+
+FUENTES
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+Knoben, Freer y Woods (2019). Technical note: Inherent benchmark or not? Comparing Nash–Sutcliffe and Kling–Gupta efficiency scores. https://hess.copernicus.org/articles/23/4323/2019/ .
+dataset/metadata.json; Laboratorio 2.pdf, pp. 1–2; outputs/revision-dataset-lab2.json. Datos oficiales enlazados por el laboratorio: https://drive.google.com/drive/folders/1crKbJBhLHQEVJGG-agOxMnKLDnBP2x4w . train.h5 está disponible en Khipu. No se utilizó test_targets.csv.
+
+========================================
+
+DIAPOSITIVA 16: LSTM obtiene menor error global
+Resultados disponibles · 60 s
+
+Los dos entrenamientos terminaron correctamente. Evaluamos el mejor checkpoint de cada modelo sobre las mismas 18 142 ventanas y sus 48 horizontes. El RMSE de LSTM es 0.1023 milímetros por hora y el de DMEL, 0.1057. Por tanto, DMEL tiene un error global 3.31 por ciento mayor en esta corrida. LSTM también obtiene menor MAE y mayores NSE y KGE. DMEL sí reduce las predicciones negativas: pasan de 28 350, o 3.26 por ciento, a 9 439, o 1.08 por ciento. Este avance en coherencia física no compensa automáticamente el mayor error. Tampoco implica menor sesgo absoluto: el sesgo de DMEL es 0.00072 frente a menos 0.00028 del LSTM. La comparación usa una sola semilla y el conjunto de selección. No constituye una prueba estadística ni un resultado final de test.
+
+FUENTES
+Resultados propios de validación: LSTM 53987 y DMEL 54181, ambos COMPLETED 0:0. outputs/khipu-lstm-53987-completed/metrics.json y outputs/khipu-dmel-54181-completed/metrics.json, analysis.json, status.json y provenance.json. Historiales: outputs/khipu-lstm-53987-history-20261003.json y outputs/khipu-dmel-54181-completed/history.json. Salidas de Khipu compartidas por el usuario, contrastadas localmente sin SSH. Ambos best.pt corresponden a epoch=9, décima época. Mismo split, semilla 42, 18142 ventanas, 48 horizontes y 508 cuencas. Son métricas de validación utilizada para seleccionar checkpoints, no de test. No se dispone de predicciones individuales localmente.
+
+========================================
+
+DIAPOSITIVA 17: Aprendizaje y selección del checkpoint
+Resultados disponibles · 70 s
+
+Cada panel permite comparar los dos modelos usando la misma escala. El azul representa LSTM y el marrón representa DMEL. El panel izquierdo muestra MSE de entrenamiento sobre caudal normalizado. El derecho muestra RMSE de validación en unidades físicas. Las pérdidas de entrenamiento bajan, pero esa mejora no se traslada continuamente a validación. En ambos modelos el mínimo ocurre en la décima época, registrada como epoch nueve. Ninguna de las diez épocas posteriores supera ese mínimo y la paciencia diez activa la parada temprana. Evaluamos best.pt, no los pesos finales de last.pt. El comportamiento es compatible con sobreajuste y justifica la selección por validación. El máximo de cien épocas es un límite, no una obligación. Los tiempos de Slurm varían entre ciclos y nodos, por lo que no usamos estas corridas como una comparación controlada de velocidad entre arquitecturas.
+
+FUENTES
+Resultados propios de validación: LSTM 53987 y DMEL 54181, ambos COMPLETED 0:0. outputs/khipu-lstm-53987-completed/metrics.json y outputs/khipu-dmel-54181-completed/metrics.json, analysis.json, status.json y provenance.json. Historiales: outputs/khipu-lstm-53987-history-20261003.json y outputs/khipu-dmel-54181-completed/history.json. Salidas de Khipu compartidas por el usuario, contrastadas localmente sin SSH. Ambos best.pt corresponden a epoch=9, décima época. Mismo split, semilla 42, 18142 ventanas, 48 horizontes y 508 cuencas. Son métricas de validación utilizada para seleccionar checkpoints, no de test. No se dispone de predicciones individuales localmente.
+
+========================================
+
+DIAPOSITIVA 18: Comparación en los 48 horizontes
+Resultados disponibles · 65 s
+
+Cada curva contiene los 48 resultados horarios de validación. LSTM tiene menor RMSE y MAE, además de mayor NSE, en todos los horizontes. A una hora, los RMSE son 0.0327 para LSTM y 0.0337 para DMEL. A veinticuatro horas son 0.1097 y 0.1126. A cuarenta y ocho horas son 0.1196 y 0.1230, con NSE de 0.4798 y 0.4499. La precisión tiende a disminuir con el horizonte, aunque las curvas no son monótonas. El incremento de error alrededor de las horas veinte a veintitrés aparece en los reportes, pero no podemos atribuirlo a eventos específicos sin analizar predicciones y observaciones. El KGE tiene una lectura distinta: DMEL mejora en catorce horizontes y LSTM en treinta y cuatro. Eso no altera el resultado sobre RMSE, que fue nuestro criterio de selección.
+
+FUENTES
+Resultados propios de validación: LSTM 53987 y DMEL 54181, ambos COMPLETED 0:0. outputs/khipu-lstm-53987-completed/metrics.json y outputs/khipu-dmel-54181-completed/metrics.json, analysis.json, status.json y provenance.json. Historiales: outputs/khipu-lstm-53987-history-20261003.json y outputs/khipu-dmel-54181-completed/history.json. Salidas de Khipu compartidas por el usuario, contrastadas localmente sin SSH. Ambos best.pt corresponden a epoch=9, décima época. Mismo split, semilla 42, 18142 ventanas, 48 horizontes y 508 cuencas. Son métricas de validación utilizada para seleccionar checkpoints, no de test. No se dispone de predicciones individuales localmente.
+
+========================================
+
+DIAPOSITIVA 19: Resultados por cuenca: ventajas repartidas
+Resultados disponibles · 65 s
+
+La comparación pareada muestra una diferencia importante respecto del resumen global. DMEL mejora el RMSE en 252 cuencas y LSTM en 256, sin empates. Ganar en casi la mitad de cuencas no basta para ganar el RMSE global: este reúne errores cuadrados, y la magnitud de cada diferencia también cuenta. La mediana del NSE es 0.5939 en LSTM y 0.5623 en DMEL. Hay setenta cuencas con NSE negativo en LSTM y ochenta en DMEL. Mostramos las medias macro negativas de ambos modelos, porque ocultarlas daría una imagen incompleta. En la cuenca 369, DMEL tiene RMSE de 0.00312, pero NSE de menos 20 042.8. La identidad entre RMSE y NSE implica una desviación observada de aproximadamente 0.0000221 milímetros por hora. Esa baja variabilidad vuelve sensible al NSE, pero no elimina el mal resultado relativo. Falta inspeccionar las predicciones individuales.
+
+FUENTES
+Resultados propios de validación: LSTM 53987 y DMEL 54181, ambos COMPLETED 0:0. outputs/khipu-lstm-53987-completed/metrics.json y outputs/khipu-dmel-54181-completed/metrics.json, analysis.json, status.json y provenance.json. Historiales: outputs/khipu-lstm-53987-history-20261003.json y outputs/khipu-dmel-54181-completed/history.json. Salidas de Khipu compartidas por el usuario, contrastadas localmente sin SSH. Ambos best.pt corresponden a epoch=9, décima época. Mismo split, semilla 42, 18142 ventanas, 48 horizontes y 508 cuencas. Son métricas de validación utilizada para seleccionar checkpoints, no de test. No se dispone de predicciones individuales localmente.
+
+========================================
+
+DIAPOSITIVA 20: Conclusiones y evaluación pendiente
+Resultados disponibles · 55 s
+
+Con los dos entrenamientos completos, la evidencia disponible favorece a LSTM según el RMSE global y en todos los horizontes. DMEL aporta mejoras en 252 cuencas y menos predicciones negativas, pero su error agregado es mayor. Por eso no afirmamos una ventaja general de la propuesta. Tampoco concluimos que el artículo sea incorrecto: implementamos una adaptación horaria, con otras entradas, una simplificación del reconocimiento modal y una pérdida conjunta. Para cerrar el laboratorio faltan persistencia, la ablación con dos ramas Informer y la revisión de predicciones individuales. Persistencia es especialmente relevante porque ambos modelos corrigen el último caudal observado. La ablación también cambia la capacidad del modelo, lo que limita la atribución causal. Las predicciones finales de test y semillas adicionales ampliarían la evaluación. Cualquier selección final debe mantener test fuera del ajuste.
+
+FUENTES
+Resultados propios de validación: LSTM 53987 y DMEL 54181, ambos COMPLETED 0:0. outputs/khipu-lstm-53987-completed/metrics.json y outputs/khipu-dmel-54181-completed/metrics.json, analysis.json, status.json y provenance.json. Historiales: outputs/khipu-lstm-53987-history-20261003.json y outputs/khipu-dmel-54181-completed/history.json. Salidas de Khipu compartidas por el usuario, contrastadas localmente sin SSH. Ambos best.pt corresponden a epoch=9, décima época. Mismo split, semilla 42, 18142 ventanas, 48 horizontes y 508 cuencas. Son métricas de validación utilizada para seleccionar checkpoints, no de test. No se dispone de predicciones individuales localmente.
+
+========================================
+
+DIAPOSITIVA 21: Referencias del método
+Referencias · 0 s
+
+El paper DMEL aporta la propuesta integrada y los parámetros publicados. Torres y colaboradores describen CEEMDAN. Richman y Moorman fundamentan la entropía muestral. Estas fuentes permiten estudiar los mecanismos. La implementación central del laboratorio pertenece al proyecto y sus diferencias están documentadas.
+
+FUENTES
+Wang, W.-c., Gu, M., Li, Z., Wang, Y.-y., Zhao, Y.-w. (2026). DMEL: A novel dual-modal ensemble learning architecture for multi-step runoff prediction. Applied Soft Computing 192, 114792. https://doi.org/10.1016/j.asoc.2026.114792 . PDF proporcionado por el usuario en la raíz del proyecto.
+Torres et al. (2011). A complete ensemble empirical mode decomposition with adaptive noise. ICASSP. https://perso.ens-lyon.fr/patrick.flandrin/0004144.pdf . Véanse también docs/decomposition.md y dmel/decomposition.py.
+Richman y Moorman (2000). Physiological time-series analysis using approximate entropy and sample entropy. https://doi.org/10.1152/ajpheart.2000.278.6.H2039 . Recurso de contraste: https://physionet.org/content/sampen/1.0.0/ .
+
+========================================
+
+DIAPOSITIVA 22: Referencias de evaluación y del proyecto
+Referencias · 0 s
+
+Las instrucciones del laboratorio fijan el problema, las restricciones y los entregables. Los metadatos establecen los canales y las unidades del objetivo. Los archivos del proyecto permiten contrastar cada decisión con el código. Los logs compartidos por el usuario constituyen la evidencia del cómputo remoto; no se han inventado resultados pendientes ni se han extrapolado los resultados diarios del paper a nuestras cuencas.
+
+FUENTES
+Zhou et al. (2021). Informer: Beyond Efficient Transformer for Long Sequence Time-Series Forecasting. https://arxiv.org/abs/2012.07436 .
+Knoben, Freer y Woods (2019). Technical note: Inherent benchmark or not? Comparing Nash–Sutcliffe and Kling–Gupta efficiency scores. https://hess.copernicus.org/articles/23/4323/2019/ .
+Laboratorio 2.pdf, documento proporcionado por el usuario, pp. 1–3. Video: metodología 6 min, implementación 6 min, resultados 6 min. Se permiten simplificaciones justificadas, conservando la propuesta central.
+dataset/metadata.json; Laboratorio 2.pdf, pp. 1–2; outputs/revision-dataset-lab2.json. Datos oficiales enlazados por el laboratorio: https://drive.google.com/drive/folders/1crKbJBhLHQEVJGG-agOxMnKLDnBP2x4w . train.h5 está disponible en Khipu. No se utilizó test_targets.csv.
+Código local: dmel/data.py, dmel/decomposition.py, dmel/models.py, dmel/engine.py y dmel/metrics.py. Configuraciones: configs/dmel.json, configs/lstm.json, configs/mrs_informer.json y configs/decomposition.json. docs/implementation.md describe las decisiones de diseño; su encabezado de estado antiguo queda actualizado por docs/estado-khipu.md.
+Resultados propios de validación: LSTM 53987 y DMEL 54181, ambos COMPLETED 0:0. outputs/khipu-lstm-53987-completed/metrics.json y outputs/khipu-dmel-54181-completed/metrics.json, analysis.json, status.json y provenance.json. Historiales: outputs/khipu-lstm-53987-history-20261003.json y outputs/khipu-dmel-54181-completed/history.json. Salidas de Khipu compartidas por el usuario, contrastadas localmente sin SSH. Ambos best.pt corresponden a epoch=9, décima época. Mismo split, semilla 42, 18142 ventanas, 48 horizontes y 508 cuencas. Son métricas de validación utilizada para seleccionar checkpoints, no de test. No se dispone de predicciones individuales localmente.

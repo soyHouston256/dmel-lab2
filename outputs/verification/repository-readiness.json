@@ -1,0 +1,76 @@
+{
+  "checked_utc": "2026-10-04T01:35:13.713876+00:00",
+  "status": "ready_for_owner_review_and_manual_publication",
+  "scope": "Fuentes y entregables preparados localmente para GitHub; no afirma que los experimentos pendientes estén terminados.",
+  "publication": {
+    "expected_files": 109,
+    "approximate_mib": 6.59,
+    "largest_file": {
+      "path": "outputs/presentacion/DMEL-UTEC-comparacion-LSTM-DMEL.pptx",
+      "bytes": 1445612
+    },
+    "ignore_probe_cases_passed": 17,
+    "excluded": [
+      "dataset binaries",
+      "cache/",
+      "runs/",
+      "logs/",
+      "migration/",
+      "virtual environments",
+      "private credentials patterns",
+      "original source PDFs",
+      "presentation build intermediates"
+    ]
+  },
+  "clean_source_checkout": {
+    "files_before_generated_verification_reports": 107,
+    "real_dataset_available": false,
+    "model_checkpoints_available": false,
+    "dependencies": "Entorno Python existente con las versiones directas fijadas; no se reinstalaron paquetes.",
+    "pytest": {
+      "tests": 86,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1,
+      "passed": 85,
+      "seconds": 18.159,
+      "platform": "macOS",
+      "skip_reason": "Integración file_descriptor de Linux no disponible en macOS.",
+      "report": "outputs/verification/tests-repository.xml"
+    },
+    "lightweight_cli_help": true,
+    "bash_syntax": true,
+    "synthetic_smoke": {
+      "complete": true,
+      "epochs_completed": 2,
+      "prediction_rows": 5,
+      "forecast_hours": 48,
+      "hydrological_result": false
+    }
+  },
+  "documentation": {
+    "relative_links_checked": 146,
+    "broken_or_ignored_links": 0,
+    "machine_specific_markdown_links": 0
+  },
+  "workflow": {
+    "path": ".github/workflows/tests.yml",
+    "yaml_and_bash_checked": true,
+    "github_execution": "Pending first owner push; not run on GitHub during preparation."
+  },
+  "credential_scan": {
+    "scope": "Patrones de claves privadas, tokens GitHub y claves AWS en texto versionable; no es una auditoría exhaustiva.",
+    "matching_files": []
+  },
+  "backup_verification": "outputs/verification/khipu-backup-20261003.json",
+  "runtime_model_source_changes": false,
+  "actions_not_performed": [
+    "SSH to Khipu",
+    "remote job submission",
+    "new real-data training",
+    "initializing Git in the user workspace",
+    "creating a GitHub repository",
+    "committing",
+    "pushing"
+  ]
+}

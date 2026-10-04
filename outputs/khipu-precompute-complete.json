@@ -1,0 +1,33 @@
+{
+  "recorded_date": "2026-09-29",
+  "evidence": "sacct y log compartidos por el usuario; sin inspección directa SSH",
+  "job_id": 53249,
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "reported_elapsed": "01:22:17",
+  "reported_elapsed_scope": "Ejecución final mostrada; no tiempo acumulado de todos los ciclos",
+  "remote_output": "/home/max.ramirez/dmel/cache/train.h5",
+  "n": 272142,
+  "complete": true,
+  "done": 272142,
+  "remaining": 0,
+  "done_this_cycle": 16277,
+  "last_cycle_processing_seconds": 4859.775,
+  "source_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "cache_sha256": "e8d304ca15b9f33eb5eb01bba82c32caffa004bc94bef2c183b038c57d7987e1",
+  "config": {
+    "parameters": {
+      "trials": 100,
+      "noise_scale": 0.2,
+      "seed": 42,
+      "max_imfs": 8,
+      "max_siftings": 50,
+      "sift_tolerance": 0.05,
+      "entropy_m": 2,
+      "entropy_r": 0.2
+    },
+    "implementation_sha256": "852b59039123cb3f59370f5c1183e78ce4826315d3c4ee81342ec42304605f86",
+    "numpy": "1.26.4",
+    "scipy": "1.16.3"
+  }
+}

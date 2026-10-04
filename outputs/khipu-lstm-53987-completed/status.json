@@ -1,0 +1,26 @@
+{
+  "output": "runs/lstm-seed42-fd-fix/validation",
+  "global": {
+    "n": 870816,
+    "rmse": 0.10228306200404642,
+    "mae": 0.02127542671589638,
+    "bias": -0.0002784329054231207,
+    "nse": 0.6446957192955849,
+    "kge2009": 0.7220572584345443,
+    "r": 0.802931869424923,
+    "alpha": 0.8040430598316141,
+    "beta": 0.9958530613207146,
+    "negative_prediction_fraction": 0.0325556719215081
+  },
+  "n": 18142,
+  "source_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "split": "validation",
+  "units": "mm/h",
+  "clipping": false,
+  "persistence": false,
+  "diagnostic_subset": false,
+  "complete": true,
+  "epochs_completed": 20,
+  "epochs_target": 100,
+  "stop_reason": "early_stopping"
+}
