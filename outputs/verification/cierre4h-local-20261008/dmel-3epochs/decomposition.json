@@ -1,0 +1,15 @@
+{
+  "implementation_sha256": "852b59039123cb3f59370f5c1183e78ce4826315d3c4ee81342ec42304605f86",
+  "numpy": "1.26.4",
+  "parameters": {
+    "entropy_m": 2,
+    "entropy_r": 0.2,
+    "max_imfs": 8,
+    "max_siftings": 50,
+    "noise_scale": 0.2,
+    "seed": 42,
+    "sift_tolerance": 0.05,
+    "trials": 100
+  },
+  "scipy": "1.16.3"
+}

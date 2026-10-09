@@ -1,0 +1,26 @@
+{
+  "output": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/validation",
+  "global": {
+    "n": 870816,
+    "rmse": 0.1114639063930169,
+    "mae": 0.027545169292687438,
+    "bias": 0.007132762498509156,
+    "nse": 0.5780494891703316,
+    "kge2009": 0.7083420889107479,
+    "r": 0.7671038276012835,
+    "alpha": 0.8602216736486296,
+    "beta": 1.1062343139733257,
+    "negative_prediction_fraction": 0.030245195311064565
+  },
+  "n": 18142,
+  "source_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "split": "validation",
+  "units": "mm/h",
+  "clipping": false,
+  "persistence": false,
+  "diagnostic_subset": false,
+  "complete": true,
+  "epochs_completed": 3,
+  "epochs_target": 3,
+  "stop_reason": "epochs_reached"
+}

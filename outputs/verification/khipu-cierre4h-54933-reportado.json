@@ -1,0 +1,65 @@
+{
+  "provenance": "Verificación ejecutada en Khipu y compartida por el usuario. Configuraciones/particiones contrastadas y métricas recalculadas desde NPZ. Sin SSH del agente; artefactos aún pendientes de descarga y auditoría local.",
+  "job_id": 54933,
+  "slurm_final_state": "Pendiente de recibir sacct final; log compartido termina con CONTROL Y ABLACION TERMINADOS.",
+  "remote_base": "/home/max.ramirez/dmel/runs/cierre-4h-seed42-20261008",
+  "resources_confirmed": {
+    "cpu": 8,
+    "ram": "32G",
+    "shards": 2,
+    "gpu_type": "rtxa6000",
+    "node": "g002"
+  },
+  "start_time_reported": "2026-10-08T17:15:35",
+  "report": {
+    "complete": true,
+    "training_budget_epochs": 3,
+    "models": {
+      "dmel": {
+        "epochs_completed": 3,
+        "best_epoch_zero_based": 2,
+        "training_minutes": 31.463662694119073,
+        "global": {
+          "n": 870816,
+          "rmse": 0.11002378880793223,
+          "mae": 0.024030898457270636,
+          "bias": -0.0025793197164913294,
+          "nse": 0.5888822849443642,
+          "kge2009": 0.6954017528200394,
+          "r": 0.7684456574121117,
+          "alpha": 0.8058688872188142,
+          "beta": 0.9615839920848901,
+          "negative_prediction_fraction": 0.08650966449858523
+        }
+      },
+      "mrs_informer": {
+        "epochs_completed": 3,
+        "best_epoch_zero_based": 2,
+        "training_minutes": 33.70561977908171,
+        "global": {
+          "n": 870816,
+          "rmse": 0.1114639063930169,
+          "mae": 0.027545169292687438,
+          "bias": 0.007132762498509156,
+          "nse": 0.5780494891703316,
+          "kge2009": 0.7083420889107479,
+          "r": 0.7671038276012835,
+          "alpha": 0.8602216736486296,
+          "beta": 1.1062343139733257,
+          "negative_prediction_fraction": 0.030245195311064565
+        }
+      }
+    },
+    "rmse_delta_ablation_minus_dmel": 0.001440117585084666,
+    "rmse_change_percent": 1.3089147362473303,
+    "interpretation": "Delta positivo favorece DMEL; negativo favorece MRS–Informer.",
+    "scope": "Validación con presupuesto de 3 épocas; no demuestra convergencia ni significancia estadística."
+  },
+  "limitations": [
+    "Una semilla.",
+    "Los mejores checkpoints se seleccionaron en la validación reportada.",
+    "Cambiar la rama cambia el número de parámetros.",
+    "Agregación de pares muestra/horizonte, no serie cronológica reconstruida.",
+    "Los tiempos son suma de épocas registradas, excluyen cola y parte de la inicialización/evaluación final."
+  ]
+}

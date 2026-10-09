@@ -1,0 +1,175 @@
+{
+  "complete": true,
+  "date_local": "2026-10-08",
+  "timezone": "America/Lima",
+  "training_budget_epochs": 3,
+  "models": {
+    "dmel": {
+      "model": "dmel",
+      "parameters": 3648561,
+      "best_epoch_zero_based": 2,
+      "checkpoint_sha256": "ea54e10ec5f2af90f6f3440bde6d3f9991579fe4f978430e0377d7a460769585",
+      "epochs_completed": 3,
+      "training_minutes": 31.463662694119073,
+      "global": {
+        "n": 870816,
+        "rmse": 0.11002378880793223,
+        "mae": 0.024030898457270636,
+        "bias": -0.0025793197164913294,
+        "nse": 0.5888822849443642,
+        "kge2009": 0.6954017528200438,
+        "r": 0.7684456574121175,
+        "alpha": 0.8058688872188142,
+        "beta": 0.9615839920848901,
+        "negative_prediction_fraction": 0.08650966449858523
+      }
+    },
+    "mrs_informer": {
+      "model": "mrs_informer",
+      "parameters": 5666818,
+      "best_epoch_zero_based": 2,
+      "checkpoint_sha256": "1325fab9581aa841a4d4637cce635ad39f59ef098b1e0cdc8ba7368aaea5f0f4",
+      "epochs_completed": 3,
+      "training_minutes": 33.70561977908171,
+      "global": {
+        "n": 870816,
+        "rmse": 0.1114639063930169,
+        "mae": 0.027545169292687438,
+        "bias": 0.007132762498509156,
+        "nse": 0.5780494891703316,
+        "kge2009": 0.7083420889107459,
+        "r": 0.7671038276012809,
+        "alpha": 0.8602216736486296,
+        "beta": 1.1062343139733257,
+        "negative_prediction_fraction": 0.030245195311064565
+      }
+    }
+  },
+  "rmse_delta_ablation_minus_dmel": 0.001440117585084666,
+  "rmse_change_percent": 1.3089147362473303,
+  "scope": "Validación completa, una semilla, capacidad diferente, tres épocas; no prueba convergencia ni significancia.",
+  "test": {
+    "lstm": {
+      "complete": true,
+      "n": 27983,
+      "horizons": 48,
+      "prediction_values": 1343184,
+      "units": "mm/h",
+      "id_range": [
+        0,
+        27982
+      ],
+      "source_sha256": "2a8f641e01ecd71a37033868e111e733bdd0119909e07d0387b7be8a62a85580",
+      "csv_sha256": "cd67767af0c8d595dfe030c7be945014be5b116781e9d1204258741929a188b6",
+      "npz_sha256": "df7e0a676a215f3754e3108142cc4e096054c4d4e2ae92e95899019ecaf0185f",
+      "run": "migration/khipu/runs/lstm-seed42-fd-fix",
+      "checkpoint_present_at_verification": {
+        "model": "lstm",
+        "parameters": 815152,
+        "best_epoch_zero_based": 9,
+        "checkpoint_sha256": "2b4dd4998bfaefc97159c1f4a565a31af3000040fb0e9e0f8c4155ca3d8847fb"
+      },
+      "negative_prediction_fraction": 0.027612747024979453,
+      "scope": "Integridad de exportación; sin métricas ni selección con objetivos de test",
+      "verified_utc": "2026-10-09T00:18:54.362909+00:00"
+    },
+    "dmel": {
+      "complete": true,
+      "n": 27983,
+      "horizons": 48,
+      "prediction_values": 1343184,
+      "units": "mm/h",
+      "id_range": [
+        0,
+        27982
+      ],
+      "source_sha256": "2a8f641e01ecd71a37033868e111e733bdd0119909e07d0387b7be8a62a85580",
+      "csv_sha256": "53920cadd84dfcab64a739f51e49f3c08613dc386c72040587ba5f915835164b",
+      "npz_sha256": "ada2ff4ddb12c523a7cbf7f80738da38925a9389241078bfec934b8f7f036cb0",
+      "run": "migration/khipu/runs/dmel-seed42",
+      "checkpoint_present_at_verification": {
+        "model": "dmel",
+        "parameters": 3648561,
+        "best_epoch_zero_based": 9,
+        "checkpoint_sha256": "b384943057e1434bd15c2a7aeb8018b165375b99f6eb03b82a4ab826cbe60569"
+      },
+      "negative_prediction_fraction": 0.009569798329938414,
+      "scope": "Integridad de exportación; sin métricas ni selección con objetivos de test",
+      "verified_utc": "2026-10-09T00:18:54.427445+00:00"
+    }
+  },
+  "remote_comparison_matches_local": true,
+  "slurm_final_54933": "No recibido; ambos status y artefactos completos y log termina CONTROL Y ABLACION TERMINADOS.",
+  "selected_evidence": [
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/dmel-3epochs/config.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/dmel-3epochs/config.json",
+      "sha256": "06fed5731ec271d12a8a78a8eb2539d5f5d75e9a6c5fb5485363357beaee1c5d"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/dmel-3epochs/history.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/dmel-3epochs/history.json",
+      "sha256": "1aca82a8cc7e8db44e4467cf53b9e2dc1d55b13549da5ae01b3d52f8b40cd060"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/dmel-3epochs/status.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/dmel-3epochs/status.json",
+      "sha256": "884f0aa478c6f374a5cf0df4acc48002a7e2e4593983ee17ebc2527763762b8b"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/dmel-3epochs/normalizer.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/dmel-3epochs/normalizer.json",
+      "sha256": "4f9f2f373ff7c0370304165254e7ff9adcda788d2ebff1cafb1ff9bdb8fb84ca"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/dmel-3epochs/decomposition.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/dmel-3epochs/decomposition.json",
+      "sha256": "3aba27c380699a68bd48091139456a69f7afe37a1d0fd793e56e2c673080392a"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/dmel-3epochs/environment.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/dmel-3epochs/environment.json",
+      "sha256": "5ac65bf21024be0559c3034650530f555eb7b900017843113b7dab2c9bb0ba2e"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/dmel-3epochs/validation/metadata.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/dmel-3epochs/validation/metadata.json",
+      "sha256": "328a4533154d78ff835b8660f6945b5331da7df5dbcfdc44908ec3f542a7c3ec"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/config.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/mrs_informer-3epochs/config.json",
+      "sha256": "874d82bbd421332a28370a5f6952a0bdb924cb21d6620c30d3ed0d9bd43ef976"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/history.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/mrs_informer-3epochs/history.json",
+      "sha256": "9569075e395f4416ebddff072988070e04eb5eeb3dfffe13b51c0af37f077134"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/status.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/mrs_informer-3epochs/status.json",
+      "sha256": "5fce9e20978d859f208b900c39a2d53ec8dfa20a3ae6c6a35656aac480c2700d"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/normalizer.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/mrs_informer-3epochs/normalizer.json",
+      "sha256": "4f9f2f373ff7c0370304165254e7ff9adcda788d2ebff1cafb1ff9bdb8fb84ca"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/decomposition.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/mrs_informer-3epochs/decomposition.json",
+      "sha256": "3aba27c380699a68bd48091139456a69f7afe37a1d0fd793e56e2c673080392a"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/environment.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/mrs_informer-3epochs/environment.json",
+      "sha256": "5ac65bf21024be0559c3034650530f555eb7b900017843113b7dab2c9bb0ba2e"
+    },
+    {
+      "source": "migration/khipu-cierre/runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/validation/metadata.json",
+      "copy": "outputs/verification/cierre4h-local-20261008/mrs_informer-3epochs/validation/metadata.json",
+      "sha256": "328a4533154d78ff835b8660f6945b5331da7df5dbcfdc44908ec3f542a7c3ec"
+    }
+  ]
+}

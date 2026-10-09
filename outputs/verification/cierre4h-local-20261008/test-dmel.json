@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "n": 27983,
+  "horizons": 48,
+  "prediction_values": 1343184,
+  "units": "mm/h",
+  "id_range": [
+    0,
+    27982
+  ],
+  "source_sha256": "2a8f641e01ecd71a37033868e111e733bdd0119909e07d0387b7be8a62a85580",
+  "csv_sha256": "53920cadd84dfcab64a739f51e49f3c08613dc386c72040587ba5f915835164b",
+  "npz_sha256": "ada2ff4ddb12c523a7cbf7f80738da38925a9389241078bfec934b8f7f036cb0",
+  "run": "migration/khipu/runs/dmel-seed42",
+  "checkpoint_present_at_verification": {
+    "model": "dmel",
+    "parameters": 3648561,
+    "best_epoch_zero_based": 9,
+    "checkpoint_sha256": "b384943057e1434bd15c2a7aeb8018b165375b99f6eb03b82a4ab826cbe60569"
+  },
+  "negative_prediction_fraction": 0.009569798329938414,
+  "scope": "Integridad de exportación; sin métricas ni selección con objetivos de test",
+  "verified_utc": "2026-10-09T00:18:54.427445+00:00"
+}

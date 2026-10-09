@@ -1,0 +1,9 @@
+{
+  "n": 18142,
+  "source_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "split": "validation",
+  "units": "mm/h",
+  "clipping": false,
+  "persistence": false,
+  "diagnostic_subset": false
+}

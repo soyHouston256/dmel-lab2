@@ -14,6 +14,8 @@
 | [Scripts](../scripts/README.md) | Función y efectos de cada utilidad |
 | [Slurm](../slurm/README.md) | Jobs y recursos en Khipu |
 | [Resultados](../outputs/README.md) | Métricas finales, presentación y evidencia histórica |
+| [Cierre del laboratorio](cierre-lab2.md) | Ablación, test y video terminados; auditoría y entrega |
+| [Video final](../outputs/video-dmel/README.md) | Duración, bloques, respaldo de Resolve y evidencia |
 
 ## Registro de Khipu
 

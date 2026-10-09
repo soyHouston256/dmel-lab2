@@ -1,0 +1,89 @@
+{
+  "review_date": "2026-10-08",
+  "scope": "Guía completa de 3 páginas, repositorio local y respaldo local de Khipu. Sin acceso SSH ni consulta de trabajos remotos actuales.",
+  "guide": {
+    "path": "Laboratorio 2.pdf",
+    "sha256": "bf14bfa41335acd4ffae3986004a49ec10f65c6b00e933bc0a885416e939aafa",
+    "pages": [
+      {
+        "page": 1,
+        "text": "Laboratorio  2  –  Pronóstico  de  caudal   Fecha  de  entrega  del  video  y  código:  Jueves  1  de  octubre  -  11:59  PM  Sesión  de  preguntas  y  revisión:  Sábado  3  de  octubre  (horario  de  clases)   \n1.  Descripción  del  Problema  En  este  laboratorio  deberán  implementar  un  modelo  para  pronosticar  el  caudal  de  ríos  utilizando  \nobservaciones\n \nhistóricas\n \nde\n \ncaudal\n \ny\n \nvariables\n \nmeteorológicas.\n Cada  muestra  contiene  336  horas  de  mediciones  (14  días)  de  una  cuenca.  A  partir  de  esta  \ninformación,\n \nel\n \nmodelo\n \ndeberá\n \npredecir\n \nel\n \ncaudal\n \nen\n \nlas\n \nsiguientes\n \n48\n \nhoras.\n El  problema  corresponde  a  una  tarea  de  pronóstico  supervisada  con  entradas  multivariadas  y  \nmúltiples\n \npasos\n \nfuturos.\n \nSe\n \nutilizan\n \nvarias\n \nvariables\n \ncomo\n \nentrada,\n \npero\n \nla\n \nvariable\n \nprincipal\n \nque\n \nse\n \ndebe\n \npronosticar\n \nes\n \nel\n \ncaudal.\n Cada  grupo  deberá  implementar  y  adaptar  al  dataset  el  método  propuesto  por  el  paper  que  \nseleccionó.\n \nCada\n \ngrupo\n \ntrabajará\n \ncon\n \nel\n \npaper\n \nseleccionado:\n \n ●  Google  Sheet  para  la  sección  1 ●  Google  Sheet  para  la  sección  2  \n2.  Dataset\n Fuente:   Rainfall-RunoffEl  dataset  contiene  series  temporales  horarias  de  distintas  cuencas.  Cada  muestra  corresponde  a  una  \nventana\n \nde\n \nuna\n \nsola\n \ncuenca\n \ne\n \nincluye\n \n12\n \nvariables\n \nhistóricas:\n ●  Caudal  ●  Precipitación  total  ●  Temperatura  ●  Presión  ●  Humedad  específica  ●  Radiación  de  onda  corta  ●  Radiación  de  onda  larga  ●  Componentes  del  viento  en  dos  direcciones  ●  Evaporación  potencial  ●  Fracción  convectiva  ●  Energía  potencial  La  variable  objetivo  corresponde  al  caudal  expresado  en  mm/h  (caudal  normalizado  por  el  área  de  la  \ncuenca).\n \nLas\n \npredicciones\n \nentregadas\n \ndeberán\n \nutilizar\n \nesta\n \nmisma\n \nunidad.\n Los  datos  están  organizados  de  la  siguiente  manera:  ●  train.h5 :  datos  de  entrenamiento  y  validación.  ○  x :  información  histórica,  con  dimensiones  [N,  336,  12].  ○  y :  caudal  de  las  siguientes  48  horas,  con  dimensiones  [N,  48].  ○  y_aux :  valores  futuros  de  las  11  variables  meteorológicas,  con  dimensiones  [N,  48,  11].  \nSu\n \nuso\n \ncomo\n \nobjetivos\n \nauxiliares\n \nde\n \nentrenamiento\n \nes\n \nopcional.\n ○  basin_id :  identificador  anónimo  de  la  cuenca  correspondiente  a  cada  muestra.  ○  split :  partición  asignada  a  cada  muestra.  El  valor  0  corresponde  a  entrenamiento  y  el  \nvalor\n \n1\n \na\n \nvalidación.\n "
+      },
+      {
+        "page": 2,
+        "text": "●  test.h5 :  datos  para  generar  las  predicciones  finales.  ○  Contiene  X  y  basin_id .  ○  No  contiene  los  valores  futuros  de  caudal  ni  de  las  variables  meteorológicas.  ●  metadata.json :  descripción  de  las  variables,  su  orden  y  las  dimensiones  de  los  datos.   \n3.  Tareas\n Cada  grupo  deberá  realizar  las  siguiente  tareas:  ●  Estudiar  el  paper  elegido  e  identificar  su  propuesta  central  y  sus  componentes  principales.  ●  Implementar  el  método  propuesto  en  el  paper.  ●  Adaptar  la  arquitectura,  las  entradas,  la  salida  y  la  función  de  pérdida.  ●  Entrenar  el  modelo  utilizando  los  datos  de  entrenamiento.  ●  Realizar  estudios  de  ablación  sobre  un  componente  importante  de  la  propuesta.  ●  Generar  predicciones  para  todas  las  muestras  del  conjunto  de  test.  ●  Analizar  los  resultados,  los  principales  errores  y  las  limitaciones  del  modelo.  La  adaptación  dependerá  del  enfoque  del  paper.  Por  ejemplo:  ●  Si  el  método  predice  todas  las  variables  de  una  serie,  podrán  adaptar  su  salida  para  predecir  \núnicamente\n \nel\n \ncaudal\n \no\n \nutilizar\n \nlas\n \nvariables\n \nmeteorológicas\n \ncomo\n \nobjetivos\n \nauxiliares.\n ●  Si  el  método  fue  diseñado  para  otro  horizonte  de  predicción,  deberán  adaptarlo  para  \nproducir\n \nlos\n \n48\n \nvalores\n \nhorarios\n \nrequeridos.\n ●  Si  utiliza  descomposiciones,  representaciones  temporales  o  mecanismos  de  atención,  \ndeberán\n \nexplicar\n \ncómo\n \nse\n \naplican\n \na\n \nlas\n \nvariables\n \ndel\n \ndataset.\n ●  Si  algún  componente  requiere  información  que  no  está  disponible,  podrán  reemplazarlo  o  \nsimplificarlo,\n \nsiempre\n \nque\n \njustifiquen\n \nla\n \ndecisión\n \ny\n \nconserven\n \nla\n \npropuesta\n \ncentral\n \ndel\n \nmétodo.\n Se  pueden  utilizar  PyTorch  y  bibliotecas  comunes  para  el  procesamiento  de  audio.  Sin  embargo,  la  \nimplementación\n \nde\n \nla\n \npropuesta\n \ncentral\n \ndel\n \npaper\n \ndeberá\n \nser\n \nrealizada\n \npor\n \nel\n \ngrupo\n.\n \nNo\n \nestá\n \npermitido\n \nutilizar\n \nuna\n \nimplementación\n \nexistente\n \ndel\n \nmismo\n \nmétodo.\n   \n4.  Entrega  (Jueves  3)\n Deberán  subir  sus  soluciones  al  formulario  de  entrega.  El  envío  debe  incluir:  A.  Código  fuente:  Puede  ser  en  un  Jupyter  Notebook  o  scripts  python.  Debe  incluir:  ●  Carga  de  los  datos  y  selección  de  las  particiones.  ●  Preprocesamiento  y  transformaciones  utilizadas.  ●  Implementación  del  método  del  paper.  ●  Entrenamiento  y  validación.  ●  Implementación  del  modelo  base.  ●  Cálculo  de  las  métricas.  ●  Experimento  de  ablación.  ●  Generación  de  predicciones  para  el  conjunto  de  test.  Los  gráficos  y  resultados  se  pueden  presentar  en  las  celdas  del  notebook,  o  pueden  enviar  un  \nmarkdown\n \n(en\n \ncaso\n \nde\n \nenviar\n \nsu\n \nsolución\n \ncomo\n \narchivos\n \n.py).\n \nTambién\n \ndeberán\n \nincluir\n \ninstrucciones\n \nbreves\n \npara\n \nejecutar\n \nel\n \ncódigo,\n \nen\n \ncaso\n \nde\n \npresentar\n \nscripts,\n \ny\n \nseñalar\n \ncualquier\n \ndiferencia\n \nimportante\n \nrespecto\n \na\n \nla\n \npropuesta\n \noriginal\n "
+      },
+      {
+        "page": 3,
+        "text": "B.  Video  explicativo  (máximo  18  minutos)  ●  Metodología  (6  min):  explicar  el  paper  y  de  los  componentes  implementados.  ●  Implementación  (6  min):  adaptación  al  dataset,  decisiones  tomadas  y  detalles  del  \nentrenamiento.\n ●  Resultados  (6  min):  comparación  con  el  modelo  base,  ablación,  análisis  de  errores  y  \nlimitaciones.\n Esta  evaluación  será  grupal .   \n5.  Sesión  de  Preguntas  (Sábado  5)\n El  sábado,  durante  el  horario  de  clases,  se  realizará  una  sesión  de  preguntas.  Las  preguntas  podrán  \nabordar\n \ncualquier\n \nparte\n \ndel\n \npaper,\n \nel\n \ncódigo,\n \nlos\n \nexperimentos\n \no\n \nlos\n \nresultados\n \npresentados.\n Se  evaluará:  ●  La  comprensión  del  método  implementado.  ●  La  capacidad  para  explicar  el  funcionamiento  del  código.  ●  La  justificación  de  las  decisiones  tomadas.  ●  La  interpretación  de  los  resultados.  ●  La  identificación  de  errores  y  limitaciones.  Las  preguntas  están  enfocadas  en  lo  que  ustedes  hicieron  y  en  verificar  que  realmente  comprendan  \nsu\n \nsolución.\n Esta  evaluación  será  individual .              "
+      }
+    ]
+  },
+  "requirements": [
+    {
+      "item": "Implementación y adaptación del método",
+      "page": 2,
+      "status": "implementado",
+      "evidence": [
+        "dmel/models.py",
+        "dmel/decomposition.py",
+        "docs/implementation.md"
+      ]
+    },
+    {
+      "item": "Entrenamiento, validación y modelo base",
+      "page": 2,
+      "status": "resultados completos disponibles para DMEL y LSTM",
+      "evidence": [
+        "outputs/khipu-dmel-54181-completed/status.json",
+        "outputs/khipu-lstm-53987-completed/status.json"
+      ]
+    },
+    {
+      "item": "Experimento de ablación de un componente importante",
+      "pages": [
+        2,
+        3
+      ],
+      "status": "implementación y configuración disponibles; no se encontraron resultados de corrida en las rutas auditadas",
+      "evidence": [
+        "configs/mrs_informer.json",
+        "docs/migracion-workstation.md"
+      ]
+    },
+    {
+      "item": "Generar predicciones para todas las muestras de test",
+      "page": 2,
+      "status": "CLI implementada; no se encontró exportación del test real. Solo hay exportaciones de test sintético de 5 muestras.",
+      "expected_rows": 27983,
+      "evidence": [
+        "dmel/cli.py",
+        "runs/synthetic-smoke-v1/model/test/metadata.json",
+        "runs/synthetic-smoke-v2/model/test/metadata.json"
+      ]
+    },
+    {
+      "item": "Análisis de resultados, errores y limitaciones",
+      "pages": [
+        2,
+        3
+      ],
+      "status": "análisis disponible para LSTM y DMEL; integrar futura evidencia de ablación",
+      "evidence": [
+        "outputs/khipu-dmel-54181-completed/analysis.json",
+        "outputs/presentacion/guion-dmel-comparacion.txt"
+      ]
+    },
+    {
+      "item": "Video de máximo 18 minutos",
+      "page": 3,
+      "status": "presentación y guion preparados; grabación y montaje en preparación según conversación"
+    }
+  ],
+  "additional_not_explicitly_required": [
+    "Persistencia como segundo modelo base; LSTM ya cubre la comparación base",
+    "Repeticiones con semillas adicionales",
+    "Métricas sobre test sin objetivos oficiales"
+  ],
+  "correction": "Ablación y predicciones del test real son requisitos de entrega, no solo trabajo futuro. La comparación DMEL-LSTM es el baseline; por sí sola no aísla un componente, dado que cambia descomposición y arquitectura."
+}

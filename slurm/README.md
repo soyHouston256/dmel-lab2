@@ -1,6 +1,6 @@
 # DMEL en Khipu
 
-**Estado al 03/10/2026:** caché train, LSTM 53987 y DMEL 54181 completados. Esta guía describe la operación en el clúster; para usar el respaldo existente en otro equipo seguir [migración a Linux](../docs/migracion-workstation.md). Los envíos nuevos deben usar una carpeta de corrida nueva. El helper `submit_experiments.sh` conserva nombres fijos como `runs/dmel-seed42`: no volver a enviarlo sobre una corrida existente.
+**Estado al 08/10/2026:** cachés train/test, corridas originales LSTM/DMEL, control y ablación de tres épocas, y predicciones completas de ambos modelos terminados. Consultar la [evidencia del cierre](../outputs/verification/cierre4h-local-20261008/README.md). Los wrappers `cierre_4h.sbatch` y `cierre_test_dmel_4h.sbatch` conservan el plan reducido; no repetirlos sobre sus salidas existentes. Esta guía describe la operación en el clúster; para usar el respaldo existente en otro equipo seguir [migración a Linux](../docs/migracion-workstation.md). Los envíos nuevos deben usar una carpeta de corrida nueva. El helper `submit_experiments.sh` conserva nombres fijos como `runs/dmel-seed42`: no volver a enviarlo sobre una corrida existente.
 
 Las corridas finales recibidas usaron 8 CPU, 32 GB de RAM y 4 shards. El helper solicita 8 shards por defecto; `TRAIN_GRES=shard:rtxa6000:4` lo cambia. La disponibilidad depende de la cuota y del estado del clúster. Las estimaciones y pilotos siguientes son referencias del procedimiento.
 

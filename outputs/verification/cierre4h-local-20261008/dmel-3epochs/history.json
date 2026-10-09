@@ -1,0 +1,23 @@
+[
+  {
+    "epoch": 0,
+    "train_mse_normalized": 0.4806364431618823,
+    "val_rmse_mm_h": 0.11419631976644497,
+    "seconds": 637.7531839371659,
+    "peak_cuda_mib": 746.35400390625
+  },
+  {
+    "epoch": 1,
+    "train_mse_normalized": 0.4428003425663264,
+    "val_rmse_mm_h": 0.1121417774330544,
+    "seconds": 639.3126644399017,
+    "peak_cuda_mib": 746.35400390625
+  },
+  {
+    "epoch": 2,
+    "train_mse_normalized": 0.4300935390908711,
+    "val_rmse_mm_h": 0.11002378880793223,
+    "seconds": 610.7539132700767,
+    "peak_cuda_mib": 746.35400390625
+  }
+]

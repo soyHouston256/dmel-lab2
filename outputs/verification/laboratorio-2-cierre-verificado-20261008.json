@@ -1,0 +1,78 @@
+{
+  "date_local": "2026-10-08",
+  "supersedes": "outputs/verification/laboratorio-2-cumplimiento-20261008.json",
+  "provenance": "Auditoría posterior a la descarga; conserva la revisión inicial como registro histórico.",
+  "experimental_requirements_complete": true,
+  "whole_submission_complete": false,
+  "requirements": [
+    {
+      "item": "Implementación y adaptación del método",
+      "page": 2,
+      "status": "implementado",
+      "evidence": [
+        "dmel/models.py",
+        "dmel/decomposition.py",
+        "docs/implementation.md"
+      ]
+    },
+    {
+      "item": "Entrenamiento, validación y modelo base",
+      "page": 2,
+      "status": "resultados completos disponibles para DMEL y LSTM",
+      "evidence": [
+        "outputs/khipu-dmel-54181-completed/status.json",
+        "outputs/khipu-lstm-53987-completed/status.json"
+      ]
+    },
+    {
+      "item": "Experimento de ablación de un componente importante",
+      "pages": [
+        2,
+        3
+      ],
+      "status": "completado y auditado; DMEL control vs MRS–Informer, ambos 3 épocas",
+      "evidence": [
+        "outputs/verification/cierre4h-local-20261008/ablation.json"
+      ]
+    },
+    {
+      "item": "Generar predicciones para todas las muestras de test",
+      "page": 2,
+      "status": "completado y auditado; 27983 × 48 en LSTM y DMEL",
+      "expected_rows": 27983,
+      "evidence": [
+        "outputs/verification/cierre4h-local-20261008/test-lstm.json",
+        "outputs/verification/cierre4h-local-20261008/test-dmel.json"
+      ]
+    },
+    {
+      "item": "Análisis de resultados, errores y limitaciones",
+      "pages": [
+        2,
+        3
+      ],
+      "status": "comparación original y ablación integradas; análisis por cuenca/horizonte, negativos y limitaciones documentados",
+      "evidence": [
+        "outputs/presentacion/DMEL-UTEC-lab2.pptx",
+        "outputs/verification/cierre4h-local-20261008/README.md"
+      ]
+    },
+    {
+      "item": "Video de máximo 18 minutos",
+      "page": 3,
+      "status": "completado y verificado localmente; cuatro integrantes, cierre y referencias, 17:49.84",
+      "evidence": [
+        "outputs/video-dmel/README.md",
+        "outputs/verification/video-final-20261008.json"
+      ]
+    }
+  ],
+  "additional_not_explicitly_required": [
+    "Persistencia como segundo modelo base; LSTM ya cubre la comparación base",
+    "Repeticiones con semillas adicionales",
+    "Métricas sobre test sin objetivos oficiales"
+  ],
+  "scope": "Ablación de presupuesto limitado de tres épocas, test completo y video final preparados localmente. Publicación de cambios y entrega por el propietario pendientes de confirmar; no acredita precisión en test ni significancia estadística.",
+  "local_deliverables_complete": true,
+  "publication_and_submission_verified": false
+}

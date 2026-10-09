@@ -1,0 +1,29 @@
+{
+  "provenance": "Salidas de sacct y verificación ejecutada en Khipu, compartidas por el usuario en el chat. Sin acceso SSH del agente; CSV/NPZ todavía no descargados.",
+  "job_id": 54935,
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "00:00:43",
+  "cache_job": {"job_id": 54932, "state": "COMPLETED", "exit_code": "0:0", "elapsed": "02:11:57"},
+  "remote_output": "/home/max.ramirez/dmel/runs/cierre-4h-seed42-20261008/test-dmel",
+  "verification_reported": {
+    "model": "dmel",
+    "complete": true,
+    "samples": 27983,
+    "horizons": 48,
+    "total_predictions": 1343184,
+    "units": "mm/h",
+    "csv_sha256": "53920cadd84dfcab64a739f51e49f3c08613dc386c72040587ba5f915835164b",
+    "npz_sha256": "ada2ff4ddb12c523a7cbf7f80738da38925a9389241078bfec934b8f7f036cb0",
+    "source_sha256": "2a8f641e01ecd71a37033868e111e733bdd0119909e07d0387b7be8a62a85580"
+  },
+  "checks_in_user_executed_command": [
+    "Test HDF5 contiene 27983 filas sin etiquetas",
+    "NPZ tiene forma 27983 x 48, valores finitos y no contiene y",
+    "IDs consecutivos 0..27982 y cuencas en orden del HDF5",
+    "Metadatos test, mm/h, sin subconjunto diagnóstico, clipping ni persistencia; SHA-256 fuente coincide con dataset/test.h5",
+    "Cabecera CSV de 49 columnas, cardinalidad completa y valores idénticos al NPZ",
+    "No existe metrics.json en la exportación de test sin etiquetas"
+  ],
+  "scope": "Integridad de exportación del test real; no acredita métricas predictivas sobre test ni resultados de ablación."
+}

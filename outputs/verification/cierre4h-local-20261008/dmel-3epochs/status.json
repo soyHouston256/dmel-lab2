@@ -1,0 +1,26 @@
+{
+  "output": "runs/cierre-4h-seed42-20261008/dmel-3epochs/validation",
+  "global": {
+    "n": 870816,
+    "rmse": 0.11002378880793223,
+    "mae": 0.024030898457270636,
+    "bias": -0.0025793197164913294,
+    "nse": 0.5888822849443642,
+    "kge2009": 0.6954017528200394,
+    "r": 0.7684456574121117,
+    "alpha": 0.8058688872188142,
+    "beta": 0.9615839920848901,
+    "negative_prediction_fraction": 0.08650966449858523
+  },
+  "n": 18142,
+  "source_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "split": "validation",
+  "units": "mm/h",
+  "clipping": false,
+  "persistence": false,
+  "diagnostic_subset": false,
+  "complete": true,
+  "epochs_completed": 3,
+  "epochs_target": 3,
+  "stop_reason": "epochs_reached"
+}

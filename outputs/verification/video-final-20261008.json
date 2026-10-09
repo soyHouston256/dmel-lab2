@@ -1,0 +1,45 @@
+{
+  "status": "completed_and_verified_locally",
+  "project": "DMEL Demo Houston",
+  "timeline": "DMEL Grupo — FINAL con cierre",
+  "video": {
+    "local_path": "outputs/video-dmel/grupo/DMEL-Grupo-final.mp4",
+    "sha256": "4192e88a3758145d45b45bccc277ae647b008a8cd4ec3ceb89331f77b288a2eb",
+    "bytes": 339899051,
+    "image_duration_seconds": 1069.84,
+    "container_duration_seconds": 1069.866,
+    "frames": 26746,
+    "fps": 25,
+    "resolution": [
+      1920,
+      1080
+    ],
+    "video_codec": "h264",
+    "audio_codec": "aac"
+  },
+  "resolve_backup": {
+    "local_path": "outputs/video-dmel/grupo/DMEL-Grupo-final.drp",
+    "sha256": "5221311d1631ed46c2eeaa85df4dfe1b7a9e9ec78c580e6a983283e8422fd218",
+    "bytes": 480323,
+    "zip_valid": true,
+    "includes_media": false
+  },
+  "presentation": {
+    "path": "outputs/presentacion/DMEL-UTEC-lab2.pptx",
+    "slides": 24,
+    "sha256": "942d188bb61b036a0f7cf857bb9fdd7a54b2c80b552ed3821734a27cc65aa889"
+  },
+  "checks": {
+    "sampled_visual_clips": 62,
+    "all_sampled_slides_match": true,
+    "minimum_slide_psnr_db": 35.70130402059724,
+    "audio_clips_checked": 59,
+    "all_audio_matches": true,
+    "minimum_audio_correlation": 0.9999993745579262,
+    "closing_camera_samples_checked": 5,
+    "all_camera_samples_match": true,
+    "integrated_loudness_lufs": -17.9,
+    "true_peak_dbfs": -4.5
+  },
+  "scope": "Verificación técnica y visual local. No acredita escucha humana completa ni publicación o entrega. Medios y proyectos de Resolve fuera de Git."
+}

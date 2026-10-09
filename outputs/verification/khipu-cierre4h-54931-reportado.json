@@ -1,0 +1,24 @@
+{
+  "provenance": "Salidas de sacct y verificación ejecutada en Khipu, compartidas por el usuario en el chat. Sin acceso SSH del agente; CSV todavía no descargado.",
+  "job_id": 54931,
+  "state": "COMPLETED",
+  "exit_code": "0:0",
+  "elapsed": "00:00:32",
+  "remote_output": "/home/max.ramirez/dmel/runs/cierre-4h-seed42-20261008/test-lstm",
+  "verification_reported": {
+    "model": "lstm",
+    "complete": true,
+    "samples": 27983,
+    "horizons": 48,
+    "total_predictions": 1343184,
+    "units": "mm/h",
+    "csv_sha256": "cd67767af0c8d595dfe030c7be945014be5b116781e9d1204258741929a188b6"
+  },
+  "checks_in_user_executed_command": [
+    "Test HDF5 contiene 27983 filas",
+    "NPZ tiene forma 27983 x 48 y valores finitos",
+    "IDs consecutivos 0..27982 y cuencas en orden del HDF5",
+    "Metadatos test y mm/h; SHA-256 de fuente coincide con dataset/test.h5",
+    "Cabecera CSV de 49 columnas, cardinalidad completa y valores idénticos al NPZ"
+  ]
+}

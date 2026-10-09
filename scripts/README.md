@@ -10,6 +10,8 @@ Ejecutar desde la raíz del proyecto. Las herramientas de transferencia las ejec
 | `bash scripts/descargar_khipu.sh` | Descarga datos, caché, fuentes y corridas completas a `migration/khipu/`; verifica SHA-256 |
 | `python scripts/pull_khipu.py` | Implementación del respaldo, solo biblioteca estándar de Python |
 | `bash scripts/sync_khipu.sh` | Utilidad anterior: `--code` y `--data` suben a Khipu; `--pull` recupera resultados parciales |
+| `python -m scripts.lab2_closure` | Auditoría de datos/checkpoints, verificación de las 27 983 filas de test y comparación emparejada de ablación |
+| `bash scripts/run_lab2_closure.sh ablation` | Entrena/reanuda MRS–Informer en el equipo donde se ejecuta; otras etapas: `test-lstm` y `test-dmel`. Ver [guía](../docs/cierre-lab2.md) |
 
 ## Respaldo
 

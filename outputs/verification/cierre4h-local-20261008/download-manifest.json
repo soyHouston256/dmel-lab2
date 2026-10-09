@@ -1,0 +1,237 @@
+{
+  "complete": true,
+  "verified_utc": "2026-10-09T00:23:32.564429+00:00",
+  "origin": "Archivos descargados por el usuario; auditoría local sin SSH",
+  "root": "migration/khipu-cierre",
+  "file_count": 40,
+  "total_bytes": 474561757,
+  "reported_csv_hashes_match": true,
+  "reported_dmel_npz_hash_matches": true,
+  "test_cache": {
+    "complete": true,
+    "samples": 27983,
+    "shape": [
+      27983,
+      336,
+      2
+    ],
+    "source_sha256": "2a8f641e01ecd71a37033868e111e733bdd0119909e07d0387b7be8a62a85580",
+    "config": {
+      "implementation_sha256": "852b59039123cb3f59370f5c1183e78ce4826315d3c4ee81342ec42304605f86",
+      "numpy": "1.26.4",
+      "parameters": {
+        "entropy_m": 2,
+        "entropy_r": 0.2,
+        "max_imfs": 8,
+        "max_siftings": 50,
+        "noise_scale": 0.2,
+        "seed": 42,
+        "sift_tolerance": 0.05,
+        "trials": 100
+      },
+      "scipy": "1.16.3"
+    }
+  },
+  "files": [
+    {
+      "path": "cache/test-cierre-4h-20261008.h5",
+      "bytes": 134214519,
+      "sha256": "dce0bd5d1ccd6a41cf6a1deb4500d6de004134558bc10bc2237d1adb6f93acf8"
+    },
+    {
+      "path": "logs/lab2_abl3ep_54933.out",
+      "bytes": 12353,
+      "sha256": "35fb7494e771dfef52e7199b93a0c1e90dca97b5e8c3a82197a78c993d364ad6"
+    },
+    {
+      "path": "logs/lab2_cache4h_54932.out",
+      "bytes": 118858,
+      "sha256": "7e1477fe3852a088f5b592307d0ea92ed168c31387115db2426b7f5909bffed3"
+    },
+    {
+      "path": "logs/lab2_test_dmel4h_54935.out",
+      "bytes": 273,
+      "sha256": "4ed5667cbb3822112c1c72d6c59f466c83653534ad3b5724a126dc1b03f9beab"
+    },
+    {
+      "path": "logs/lab2_test_lstm4h_54931.out",
+      "bytes": 273,
+      "sha256": "bd6908f226c0c824165ad95db4b18a28a27c679cd0043fb5f54f0c4d2ea69a7d"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/ablation-3epochs.json",
+      "bytes": 1457,
+      "sha256": "f79bc7d1670d7ae9cbd4cf3234bef6790355aa1e2f32a7b5abbc906f7039838a"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/best.pt",
+      "bytes": 43851321,
+      "sha256": "ea54e10ec5f2af90f6f3440bde6d3f9991579fe4f978430e0377d7a460769585"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/config.json",
+      "bytes": 1442,
+      "sha256": "06fed5731ec271d12a8a78a8eb2539d5f5d75e9a6c5fb5485363357beaee1c5d"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/decomposition.json",
+      "bytes": 334,
+      "sha256": "3aba27c380699a68bd48091139456a69f7afe37a1d0fd793e56e2c673080392a"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/environment.json",
+      "bytes": 269,
+      "sha256": "5ac65bf21024be0559c3034650530f555eb7b900017843113b7dab2c9bb0ba2e"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/history.json",
+      "bytes": 560,
+      "sha256": "1aca82a8cc7e8db44e4467cf53b9e2dc1d55b13549da5ae01b3d52f8b40cd060"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/last.pt",
+      "bytes": 43851321,
+      "sha256": "d6b3107bd074c04992706e9a8bb3334b07a610ce985478ade60eecd9a0c74b77"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/normalizer.json",
+      "bytes": 747,
+      "sha256": "4f9f2f373ff7c0370304165254e7ff9adcda788d2ebff1cafb1ff9bdb8fb84ca"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/split_ids.npz",
+      "bytes": 2177652,
+      "sha256": "5f30ac3d5b78e5086a60a6cd164347068c2ef8ed312348e695fbd6dafe37bad1"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/status.json",
+      "bytes": 749,
+      "sha256": "884f0aa478c6f374a5cf0df4acc48002a7e2e4593983ee17ebc2527763762b8b"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/validation/metadata.json",
+      "bytes": 223,
+      "sha256": "328a4533154d78ff835b8660f6945b5331da7df5dbcfdc44908ec3f542a7c3ec"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/validation/metrics.json",
+      "bytes": 203779,
+      "sha256": "583034d7f3173f9af6806360e698ee5e2b0ac049c83ad7b5a7945ba37f627ad7"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/validation/predictions.csv",
+      "bytes": 18090527,
+      "sha256": "fdb7482ae437883afcd735e1702fc5920bd3cfbd2fdd5f3a4a76797910685c90"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/dmel-3epochs/validation/predictions.npz",
+      "bytes": 5110086,
+      "sha256": "1026325e5e03ed2dfc488bb8dfb345f26c95af40a58a649643c4722a1edc6a97"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/best.pt",
+      "bytes": 68109854,
+      "sha256": "1325fab9581aa841a4d4637cce635ad39f59ef098b1e0cdc8ba7368aaea5f0f4"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/config.json",
+      "bytes": 1450,
+      "sha256": "874d82bbd421332a28370a5f6952a0bdb924cb21d6620c30d3ed0d9bd43ef976"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/decomposition.json",
+      "bytes": 334,
+      "sha256": "3aba27c380699a68bd48091139456a69f7afe37a1d0fd793e56e2c673080392a"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/environment.json",
+      "bytes": 269,
+      "sha256": "5ac65bf21024be0559c3034650530f555eb7b900017843113b7dab2c9bb0ba2e"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/history.json",
+      "bytes": 562,
+      "sha256": "9569075e395f4416ebddff072988070e04eb5eeb3dfffe13b51c0af37f077134"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/last.pt",
+      "bytes": 68109854,
+      "sha256": "c090bd8d4e43db23876872c135a3d625620fa6ff0d6d5c36c0e12f2d88d2f89e"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/normalizer.json",
+      "bytes": 747,
+      "sha256": "4f9f2f373ff7c0370304165254e7ff9adcda788d2ebff1cafb1ff9bdb8fb84ca"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/split_ids.npz",
+      "bytes": 2177652,
+      "sha256": "5f30ac3d5b78e5086a60a6cd164347068c2ef8ed312348e695fbd6dafe37bad1"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/status.json",
+      "bytes": 755,
+      "sha256": "5fce9e20978d859f208b900c39a2d53ec8dfa20a3ae6c6a35656aac480c2700d"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/validation/metadata.json",
+      "bytes": 223,
+      "sha256": "328a4533154d78ff835b8660f6945b5331da7df5dbcfdc44908ec3f542a7c3ec"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/validation/metrics.json",
+      "bytes": 203783,
+      "sha256": "671ed7de64f17260885e785abbce64a57129488ef660f84a59d1e000afb84ead"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/validation/predictions.csv",
+      "bytes": 17901357,
+      "sha256": "05a1f6614fcf7652526efcf75b3a1d6ca8b11a306f3d064a5466dd0bcb52dbd1"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/mrs_informer-3epochs/validation/predictions.npz",
+      "bytes": 5092411,
+      "sha256": "dfecb14839a5d1fdeedbd4a1350096e1c430c649355b9e943f018727fe5d663b"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/test-dmel/metadata.json",
+      "bytes": 217,
+      "sha256": "d22f4a99e84b0f61effda198e8bd1180ed8211c3fb2f76e66523a1acb2609d0f"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/test-dmel/predictions.csv",
+      "bytes": 27618928,
+      "sha256": "53920cadd84dfcab64a739f51e49f3c08613dc386c72040587ba5f915835164b"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/test-dmel/predictions.npz",
+      "bytes": 4973174,
+      "sha256": "ada2ff4ddb12c523a7cbf7f80738da38925a9389241078bfec934b8f7f036cb0"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/test-dmel/verification.json",
+      "bytes": 386,
+      "sha256": "e754899552a2653099c674063dabc73ce33331bff4aabd3e98e3f05b264bfbad"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/test-lstm/metadata.json",
+      "bytes": 217,
+      "sha256": "d22f4a99e84b0f61effda198e8bd1180ed8211c3fb2f76e66523a1acb2609d0f"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/test-lstm/predictions.csv",
+      "bytes": 27749110,
+      "sha256": "cd67767af0c8d595dfe030c7be945014be5b116781e9d1204258741929a188b6"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/test-lstm/predictions.npz",
+      "bytes": 4983516,
+      "sha256": "df7e0a676a215f3754e3108142cc4e096054c4d4e2ae92e95899019ecaf0185f"
+    },
+    {
+      "path": "runs/cierre-4h-seed42-20261008/test-lstm/verification.json",
+      "bytes": 215,
+      "sha256": "1b506ce00b6298f0d1e7383571f0a15aaee6a8c9d9cff9cbd596a711fe070248"
+    }
+  ]
+}

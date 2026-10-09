@@ -1,0 +1,5 @@
+{
+  "description": "Ablación de especialización, Informer en ambas ramas, presupuesto de 3 épocas igual al control DMEL. No acredita convergencia.",
+  "model": {"name": "mrs_informer", "d_model": 256, "heads": 8, "ff": 1024, "lstm_hidden": 256},
+  "training": {"epochs": 3, "batch_size": 32, "lr": 0.0001, "patience": 3, "seed": 42, "workers": 2, "threads": 8}
+}

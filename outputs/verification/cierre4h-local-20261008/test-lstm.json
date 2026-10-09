@@ -1,0 +1,24 @@
+{
+  "complete": true,
+  "n": 27983,
+  "horizons": 48,
+  "prediction_values": 1343184,
+  "units": "mm/h",
+  "id_range": [
+    0,
+    27982
+  ],
+  "source_sha256": "2a8f641e01ecd71a37033868e111e733bdd0119909e07d0387b7be8a62a85580",
+  "csv_sha256": "cd67767af0c8d595dfe030c7be945014be5b116781e9d1204258741929a188b6",
+  "npz_sha256": "df7e0a676a215f3754e3108142cc4e096054c4d4e2ae92e95899019ecaf0185f",
+  "run": "migration/khipu/runs/lstm-seed42-fd-fix",
+  "checkpoint_present_at_verification": {
+    "model": "lstm",
+    "parameters": 815152,
+    "best_epoch_zero_based": 9,
+    "checkpoint_sha256": "2b4dd4998bfaefc97159c1f4a565a31af3000040fb0e9e0f8c4155ca3d8847fb"
+  },
+  "negative_prediction_fraction": 0.027612747024979453,
+  "scope": "Integridad de exportación; sin métricas ni selección con objetivos de test",
+  "verified_utc": "2026-10-09T00:18:54.362909+00:00"
+}

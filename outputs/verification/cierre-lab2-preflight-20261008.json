@@ -1,0 +1,38 @@
+{
+  "ready": true,
+  "environment": {
+    "python": "3.12.12",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "torch": "2.7.1",
+    "numpy": "1.26.4",
+    "scipy": "1.16.3",
+    "h5py": "3.15.1",
+    "cuda_build": null,
+    "cuda_available": false,
+    "gpu": null
+  },
+  "train_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "train_cache_sha256": "e8d304ca15b9f33eb5eb01bba82c32caffa004bc94bef2c183b038c57d7987e1",
+  "test_sha256": "2a8f641e01ecd71a37033868e111e733bdd0119909e07d0387b7be8a62a85580",
+  "n_train": 254000,
+  "n_validation": 18142,
+  "n_test": 27983,
+  "existing_runs": {
+    "dmel-seed42": {
+      "model": "dmel",
+      "parameters": 3648561,
+      "best_epoch_zero_based": 9,
+      "checkpoint_sha256": "b384943057e1434bd15c2a7aeb8018b165375b99f6eb03b82a4ab826cbe60569"
+    },
+    "lstm-seed42-fd-fix": {
+      "model": "lstm",
+      "parameters": 815152,
+      "best_epoch_zero_based": 9,
+      "checkpoint_sha256": "2b4dd4998bfaefc97159c1f4a565a31af3000040fb0e9e0f8c4155ca3d8847fb"
+    }
+  },
+  "ablation_parameters": 5666818,
+  "ablation_config_sha256": "07ca41ece3b5d369e18c7baebfc62de647d082e59bd8edd5c4cf41720794a91c",
+  "scope": "Preflight solamente; no acredita ejecución de ablación ni exportación de test",
+  "verified_utc": "2026-10-08T18:49:38.971820+00:00"
+}

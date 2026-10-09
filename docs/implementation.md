@@ -1,6 +1,6 @@
 # Implementación del Laboratorio 2
 
-Estado 03/10/2026: pipeline comprobado en CPU con datos sintéticos; caché completa, LSTM 53987 y DMEL 54181 terminados en Khipu. Los resultados y la comparación están en el [catálogo de evidencia](../outputs/README.md). El respaldo local de datos, caché, checkpoints y predicciones está verificado; ver [migración a Linux](migracion-workstation.md). Es una **adaptación de DMEL**, no una reproducción de sus cifras.
+Estado 08/10/2026: corridas principales LSTM 53987 y DMEL 54181 terminadas; control DMEL y ablación MRS–Informer entrenados durante tres épocas; exportaciones completas de test para los dos modelos originales. Los nuevos artefactos se descargaron y [verificaron localmente](../outputs/verification/cierre4h-local-20261008/README.md). El [catálogo de evidencia](../outputs/README.md) enlaza resultados y PPT actualizada. Es una **adaptación de DMEL**, no una reproducción de sus cifras.
 
 ## Datos y causalidad
 
@@ -29,7 +29,7 @@ Se sustituyen embedding convolucional y normalización del bloque distilling ori
 
 La escala conserva la identidad `high/σ + (low−μ)/σ = (q−μ)/σ`; se multiplica la salida sumada por σ y se añade μ **una sola vez**. No hay clipping: las métricas registran predicciones negativas. Componentes individuales pueden ser negativos.
 
-## Experimentos preparados
+## Experimentos y presupuestos
 
 | Configuración | Pregunta | Parámetros |
 |---|---|---:|
@@ -38,7 +38,7 @@ La escala conserva la identidad `high/σ + (low−μ)/σ = (q−μ)/σ`; se mult
 | `dmel.json` | ¿Sirve combinar grupos y predictores? | 3648561 |
 | `mrs_informer.json` | ¿Sirve especializar la rama baja con LSTM? | 5666818 |
 
-Las tres redes comparten split, seed 42, normalización, loss y presupuesto. La ablación conserva representación y suma, pero cambia capacidad: reportarlo. Una semilla no demuestra robustez estadística; ampliar requiere configs y nombres de corrida nuevos. Las configuraciones `smoke` son diagnósticas, no resultados publicables; sus checkpoints no se reanudan hacia dimensiones finales.
+La comparación principal LSTM–DMEL comparte máximo 100 épocas y paciencia 10; ambos completaron 20 y seleccionaron la décima. La ablación ejecutada utiliza `dmel-3epochs.json` y `mrs_informer-3epochs.json`: dos entrenamientos nuevos desde cero, máximo 3 épocas y paciencia 3; ambos seleccionaron la tercera. Dentro de cada comparación se mantienen split, seed 42, normalización y loss. No comparar sus presupuestos como si fueran iguales entre los dos experimentos. La ablación conserva representación y suma, pero cambia capacidad. Una semilla y tres épocas no demuestran robustez ni convergencia; ampliar requiere configs y nombres de corrida nuevos. Persistencia queda como extensión. Las configuraciones `smoke` son diagnósticas, no resultados publicables.
 
 ## Evaluación y artefactos
 
@@ -46,4 +46,4 @@ Se selecciona `best.pt` por RMSE global de validación en mm/h. Se exportan RMSE
 
 Cada corrida guarda configuración efectiva, hashes de código/datos/cache, versiones, normalización, ids, historial, `best.pt` y `last.pt`. Reanudar restaura Adam, época, paciencia y RNG PyTorch/CUDA/DataLoader; rechaza cambios de configuración, código o datos. No promete igualdad bit a bit entre CPU/GPU. CSV: Id original y `q_01`…`q_48`, formato propuesto pendiente de confirmación oficial. Test sin etiquetas solo genera predicciones. Resultados sintéticos se guardan bajo `runs/synthetic-*`.
 
-LSTM y DMEL cuentan con validación GPU, comparación por horizonte/cuenca y gráficos de resultados. Quedan la referencia de persistencia, la ablación MRS–Informer, el análisis de errores con predicciones individuales, la predicción final de test y el video. La auditoría del solapamiento temporal original sigue limitada por la ausencia de fechas. Las pruebas del código no acreditan por sí mismas ventaja hidrológica.
+La ablación arroja RMSE 0.110024 para el control y 0.111464 mm/h para MRS–Informer (+1.31 %); KGE y la fracción de negativos favorecen a la variante. Se verificaron 27 983 × 48 predicciones de test por modelo original, sin calcular precisión en test. El [video grupal](../outputs/video-dmel/README.md) está terminado y verificado localmente, con duración de 17:49.84. Persistencia, más semillas y análisis detallado de eventos son extensiones; la ausencia de fechas limita la auditoría de solapamiento temporal. Las pruebas del código no acreditan por sí mismas ventaja hidrológica.

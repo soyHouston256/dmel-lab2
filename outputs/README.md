@@ -6,12 +6,16 @@ Este directorio contiene evidencia seleccionada para GitHub. Se conservan las ru
 
 | Artefacto | Contenido |
 |---|---|
-| [Presentación UTEC](presentacion/DMEL-UTEC-comparacion-LSTM-DMEL.pptx) | 22 diapositivas: metodología, dataset y comparación LSTM–DMEL |
-| [Guion de exposición](presentacion/guion-dmel-comparacion.txt) | Notas y referencias de la presentación vigente |
+| [Presentación UTEC](presentacion/DMEL-UTEC-lab2.pptx) | 24 diapositivas: metodología, comparación, ablación y test completo |
+| [Guion de exposición](presentacion/guion-dmel-cierre.txt) | Notas y referencias de la presentación vigente |
+| [Complemento para Houston](presentacion/complemento-cierre-Houston.txt) | Guion de la locución de D20–D22, ya incorporada al video |
+| [Cierre experimental verificado](verification/cierre4h-local-20261008/README.md) | Ablación de tres épocas, test completo LSTM/DMEL y manifiesto local |
+| [Auditoría actualizada de la guía](verification/laboratorio-2-cierre-verificado-20261008.json) | Requisitos experimentales y video completos; publicación y entrega a cargo del propietario |
 | [LSTM 53987](khipu-lstm-53987-completed/metrics.json) | Validación global, 48 horizontes y 508 cuencas |
 | [DMEL 54181](khipu-dmel-54181-completed/metrics.json) | Mismo desglose para DMEL |
 | [Comparación de modelos](khipu-dmel-54181-completed/analysis.json) | Diferencias, conteos por horizonte/cuenca y limitaciones |
 | [Curva de LSTM](khipu-lstm-53987-learning-20261003.png) | Aprendizaje y duración por época; también disponible en PDF |
+| [Video grupal final](video-dmel/README.md) | Cuatro integrantes, cierre y referencias: 17:49.84; MP4 y DRP locales |
 | [Verificación del repositorio](verification/README.md) | Respaldo, integridad y pruebas de preparación |
 
 Las carpetas `*-completed/` incluyen `status.json`, `sacct.txt`, `provenance.json` y análisis. Sus registros de procedencia describen lo conocido al extraer las salidas del usuario. Campos como `checkpoints_downloaded: false` son históricos: la descarga posterior está documentada en [la verificación del respaldo](verification/khipu-backup-20261003.json). Las métricas se cotejaron con esa copia sin sustituir los originales.

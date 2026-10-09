@@ -1,0 +1,42 @@
+{
+  "model": {
+    "name": "dmel",
+    "history": 336,
+    "horizon": 48,
+    "d_model": 256,
+    "heads": 8,
+    "encoder_layers": 2,
+    "ff": 1024,
+    "lstm_hidden": 256,
+    "lstm_layers": 2,
+    "label_len": 48,
+    "factor": 5,
+    "dropout": 0.1
+  },
+  "training": {
+    "epochs": 3,
+    "batch_size": 32,
+    "lr": 0.0001,
+    "patience": 3,
+    "seed": 42,
+    "workers": 2,
+    "threads": 8,
+    "max_train": 0,
+    "max_val": 0,
+    "grad_clip": 1.0
+  },
+  "data_sha256": "38a1e2dee5f9aa61f5e1543dc6f7c22689f6ee3059511498022df31f01730078",
+  "data_path": "/home/max.ramirez/dmel/dataset/train.h5",
+  "cache_sha256": "e8d304ca15b9f33eb5eb01bba82c32caffa004bc94bef2c183b038c57d7987e1",
+  "implementation": {
+    "__init__.py": "5463b6753b552f9cb37dc8bbbc0be92d1a84dc6338b8e3de18ade11bb0ee3a11",
+    "cli.py": "8ade23148ed0c1f06f157a2eabc8b5a71abdb98ece89c0164f0062bd0f765f52",
+    "data.py": "f488468fb271aad821f18de3ecc96955b390f42d6a2631f2e7bdc37960d746a0",
+    "decomposition.py": "852b59039123cb3f59370f5c1183e78ce4826315d3c4ee81342ec42304605f86",
+    "engine.py": "8afa1d67bd584b7b5399f3c9cf9d1790df596173f1bb6536c8f2a6130271b290",
+    "metrics.py": "2912355b6f26a0cd8655ae7ff2f412f382f8a5defe046c9cd5817b4d5e00886c",
+    "models.py": "dd23f1f4e213551a50592194e74d6cafce36eb4ab866e264e4f45568bfffff80",
+    "precompute.py": "bdcfba68b2327d2f82351758f7ab0918267e75073b1ed03708c7ed7ab86346c7"
+  },
+  "diagnostic_subset": false
+}

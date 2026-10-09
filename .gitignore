@@ -12,6 +12,8 @@ __pycache__/
 .pytest_cache/
 .mypy_cache/
 .ruff_cache/
+.ipynb_checkpoints/
+.cache/
 .hypothesis/
 .tox/
 .nox/
@@ -38,25 +40,64 @@ htmlcov/
 *.pkl
 *.pickle
 *.joblib
+*.parquet
+*.arrow
+*.feather
+*.zarr/
 /dataset/**/*.csv
-/dataset/**/*.parquet
-/dataset/**/*.zip
-/dataset/**/*.tar
-/dataset/**/*.tar.gz
-/dataset/**/*.tgz
-/dataset/**/*.gz
-/dataset/**/*.7z
-/dataset/**/*.rar
+/dataset/**/*.tsv
 
 # Ejecuciones completas, cache, logs y respaldos descargados de Khipu.
 /cache/
 /runs/
 /logs/
 /migration/
+/checkpoints/
+/backups/
+/wandb/
+/mlruns/
 .rsync-partial/
 *.log
 slurm-*.out
-/outputs/**/predictions.csv
+predictions.csv
+
+# Grabaciones, exportaciones y proyectos de edición: se entregan por separado.
+# Las cámaras y Zoom también pueden generar extensiones en mayúsculas.
+*.[mM][pP]4
+*.[mM][oO][vV]
+*.[mM][kK][vV]
+*.[aA][vV][iI]
+*.[wW][eE][bB][mM]
+*.[mM]4[vV]
+*.[mM][xX][fF]
+*.[wW][aA][vV]
+*.[mM][pP]3
+*.[mM]4[aA]
+*.[aA][aA][cC]
+*.[fF][lL][aA][cC]
+*.[aA][iI][fF]
+*.[aA][iI][fF][fF]
+*.[dD][rR][pP]
+*.[dD][rR][tT]
+*.[dD][rR][aA]/
+CacheClip/
+ProxyMedia/
+OptimizedMedia/
+/outputs/video-dmel/*
+!/outputs/video-dmel/README.md
+
+# Respaldos comprimidos y archivos de trabajo locales.
+*.[zZ][iI][pP]
+*.[tT][aA][rR]
+*.[tT][gG][zZ]
+*.7[zZ]
+*.[rR][aA][rR]
+*.[gG][zZ]
+*.[bB][zZ]2
+*.[xX][zZ]
+*.[zZ][sS][tT]
+/notes/
+/outputs/presentacion/codigo.txt
 
 # Archivos de trabajo y exportación. Conservar outputs/presentacion/*.pptx.
 /tmp/
@@ -66,6 +107,9 @@ slurm-*.out
 *.tmp
 *.temp
 *.partial
+*.bak
+*.orig
+*.rej
 *.swp
 *.swo
 *~
@@ -78,7 +122,13 @@ slurm-*.out
 !.env.template
 *.pem
 *.key
+*.p12
+*.pfx
 .ssh/
+.aws/
+.azure/
+.gcloud/
+.codex/
 .netrc
 .pypirc
 id_rsa
@@ -94,6 +144,7 @@ Desktop.ini
 
 # Referencias originales y texto extraído. Conservar nuestros informes y figuras.
 /DMEL_ A novel dual-modal ensemble learning architecture for multi-step runoff prediction.pdf
+/DMEL.pdf
 /Laboratorio 2.pdf
 /outputs/sources/
 

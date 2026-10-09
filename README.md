@@ -2,9 +2,9 @@
 
 Predicción de **48 horas de caudal específico (mm/h)** a partir de **336 horas de historia y 12 variables**. Implementación propia en PyTorch, adaptada de [Wang et al. (2026)](https://doi.org/10.1016/j.asoc.2026.114792): CEEMDAN, agrupación por entropía y combinación de Informer con LSTM.
 
-**Estado al 03/10/2026:** LSTM y DMEL entrenados y evaluados en Khipu; comparación y presentación disponibles. El respaldo completo de ambas corridas está verificado localmente y se transfiere por separado de GitHub.
+**Estado al 08/10/2026:** LSTM y DMEL entrenados y evaluados en Khipu. La [ablación de tres épocas y ambos tests completos](outputs/verification/cierre4h-local-20261008/README.md) están descargados y auditados localmente: 27 983 muestras × 48 horizontes por modelo. La PPT final tiene 24 diapositivas y el [video grupal está terminado](outputs/video-dmel/README.md), con los cuatro integrantes y el cierre: **17:49.84**, dentro del máximo de 18 minutos. Datos, pesos y exportaciones completas se transfieren por separado de GitHub.
 
-**Entregables:** [PowerPoint UTEC · 22 diapositivas](outputs/presentacion/DMEL-UTEC-comparacion-LSTM-DMEL.pptx) · [Guion](outputs/presentacion/guion-dmel-comparacion.txt) · [Resultados y evidencia](outputs/README.md).
+**Entregables:** [PowerPoint UTEC · 24 diapositivas](outputs/presentacion/DMEL-UTEC-lab2.pptx) · [Guion](outputs/presentacion/guion-dmel-cierre.txt) · [Resultados y evidencia](outputs/README.md) · [Video y edición](outputs/video-dmel/README.md).
 
 ## Inicio rápido
 
@@ -54,7 +54,7 @@ outputs/              Métricas, informes, figuras y presentación seleccionados
 .github/workflows/    Pruebas automáticas en CPU
 ```
 
-`cache/`, `runs/`, `logs/` y `migration/` son almacenamiento local ignorado. GitHub contiene las fuentes y los entregables seleccionados; los HDF5, pesos, entornos y respaldos se mantienen aparte. Ver [datos](dataset/README.md) y [preparación de GitHub](docs/github.md).
+`cache/`, `runs/`, `logs/`, `migration/` y `notes/` son almacenamiento local ignorado. Las grabaciones y proyectos de Resolve también quedan fuera de Git. GitHub contiene las fuentes y los entregables seleccionados; los HDF5, pesos, entornos y respaldos se mantienen aparte. Ver [datos](dataset/README.md) y [preparación de GitHub](docs/github.md).
 
 ## Documentación
 
@@ -69,4 +69,4 @@ outputs/              Métricas, informes, figuras y presentación seleccionados
 
 Esta es una **adaptación al dataset horario del laboratorio**: utiliza dos grupos por ventana y una pérdida conjunta sobre caudal. No afirma reproducir las agrupaciones ni las cifras del artículo. La normalización se ajusta únicamente con train y se respetan los flags oficiales. `test_targets.csv` no participa del entrenamiento ni de la selección.
 
-Quedan por completar la referencia de persistencia, la ablación MRS–Informer, el análisis de predicciones individuales, las predicciones finales de test y el video de exposición. El repositorio conserva los resultados obtenidos hasta ahora; la prueba sintética solo verifica el funcionamiento del pipeline.
+Los dos requisitos experimentales se completaron: **ablación MRS–Informer frente a un nuevo control DMEL, ambos de tres épocas**, y **exportación de las 27 983 muestras de test para LSTM y DMEL originales**. La ablación no demuestra convergencia ni significancia; cambiar la rama también cambia capacidad. El test está verificado en integridad, sin métricas de precisión. El video grupal y su respaldo editable están exportados y verificados localmente; se entregan por separado del repositorio. Queda al propietario publicar los cambios y realizar la entrega en el canal solicitado. Persistencia adicional, más semillas y análisis de casos individuales serían extensiones. La [auditoría actualizada de la guía](outputs/verification/laboratorio-2-cierre-verificado-20261008.json) conserva estos límites.
